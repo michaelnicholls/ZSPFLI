@@ -1,0 +1,9 @@
+@EndUserText.label: 'access control'
+@MappingRole: true
+define role ZC_SPFLI_DELETE {
+    grant 
+        select
+            on
+      ZC_SPFLI_delete
+                    where
+                        (Carrid) = aspect pfcg_auth(S_CARRID, CARRID , ACTVT = '06');}

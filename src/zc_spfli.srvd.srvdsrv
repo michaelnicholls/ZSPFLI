@@ -1,0 +1,4 @@
+@EndUserText.label: 'service'
+define service Zc_spfli {
+  expose zc_spfli;
+}

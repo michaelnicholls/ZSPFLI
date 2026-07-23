@@ -1,0 +1,11 @@
+@EndUserText.label: 'access control'
+@MappingRole: true
+define role ZC_SPFLI {
+    grant
+        select
+            on
+                ZC_SPFLI
+                    where
+                        inheriting conditions from entity zspfli;
+                        
+}
