@@ -6,6 +6,7 @@ CLASS lhc_zspfli DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS precheck_create FOR PRECHECK
       IMPORTING entities FOR CREATE zspfli.
+      METHODS get_global_features FOR GLOBAL FEATURES IMPORTING REQUEST requested_features FOR zspfli RESULT result.
 
 ENDCLASS.
 
@@ -21,11 +22,11 @@ CLASS lhc_zspfli IMPLEMENTATION.
       DATA(update) = if_abap_behv=>auth-allowed.
       DATA(delete) = if_abap_behv=>auth-allowed.
       " TODO: variable is assigned but never used (ABAP cleaner)
-      SELECT SINGLE @abap_true FROM zc_spfli_update INTO @DATA(exists) WHERE Carrid = @<carrier>-carrid.
+      SELECT SINGLE @abap_true FROM zc_spfli_update INTO @DATA(allowed) WHERE Carrid = @<carrier>-carrid.
       IF sy-subrc <> 0.
         update = if_abap_behv=>auth-unauthorized.
       ENDIF.
-      SELECT SINGLE @abap_true FROM zc_spfli_delete INTO @exists WHERE Carrid = @<carrier>-carrid.
+      SELECT SINGLE @abap_true FROM zc_spfli_delete INTO @allowed WHERE Carrid = @<carrier>-carrid.
       IF sy-subrc <> 0.
         delete = if_abap_behv=>auth-unauthorized.
       ENDIF.
@@ -38,9 +39,9 @@ CLASS lhc_zspfli IMPLEMENTATION.
 
 
   METHOD precheck_create.
-  " checks whether we can add
+  " checks whether we can add a particular carrier
  LOOP AT entities ASSIGNING FIELD-SYMBOL(<carrier>).
-       select SINGLE @abap_true from zc_spfli_add into @data(exists) where Carrid = @<carrier>-Carrid.
+       select SINGLE @abap_true from zc_spfli_add into @data(allowed) where Carrid = @<carrier>-Carrid.
        if sy-subrc <> 0.
        append value #(  %tky = <carrier>-carrid ) to failed-zspfli.
        APPEND value #(  %tky = <carrier>-carrid
@@ -50,4 +51,15 @@ CLASS lhc_zspfli IMPLEMENTATION.
  endloop.
 
   ENDMETHOD.
+
+  METHOD get_global_features.
+  " checks whether create is allowed
+  " unfortunately, it won't hide the create button
+  select count( * ) from zc_spfli_add into @data(matching).
+  if matching  = 0.
+     result-%create = if_abap_behv=>auth-unauthorized.
+  endif.
+
+  ENDMETHOD.
+
 ENDCLASS.

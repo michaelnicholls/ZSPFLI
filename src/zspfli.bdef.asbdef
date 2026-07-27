@@ -4,10 +4,10 @@ strict ( 2 );
 define behavior for zspfli //alias <alias_name>
 persistent table spfli
 lock master
-authorization master ( instance )
+authorization master (  instance )
 //etag master <field_name>
 {
-  create (precheck);
+  create (features : global,precheck);
   update;
   delete;
   field(readonly : update) Carrid, Connid;
