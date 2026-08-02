@@ -6,6 +6,7 @@ define root view entity zspfli as select from spfli
 {
     key carrid as Carrid,
     key connid as Connid,
+    carrid as carrid_s,
     countryfr as Countryfr,
     cityfrom as Cityfrom,
     airpfrom as Airpfrom,
@@ -18,4 +19,4 @@ define root view entity zspfli as select from spfli
     distid as Distid,
     fltype as Fltype,
     period as Period
- }
+    }

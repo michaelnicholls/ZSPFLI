@@ -1,0 +1,10 @@
+@EndUserText.label: 'access control'
+@MappingRole: true
+define role ZC_SPFLI_READ {
+    grant 
+        select
+            on
+       ZC_SPFLI_read
+                    where
+                        (Carrid) = aspect pfcg_auth(S_CARRID, CARRID , ACTVT = '03'); 
+}

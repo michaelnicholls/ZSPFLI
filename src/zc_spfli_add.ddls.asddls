@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'add?'
 @Metadata.ignorePropagatedAnnotations: true
-define view entity ZC_SPFLI_ADD as select distinct  from zspfli
+define view entity ZC_SPFLI_ADD as select distinct  from zspfli join scarr on zspfli.Carrid = scarr.carrid
 {
-    key Carrid
+    key zspfli.Carrid, scarr.carrname
 }
