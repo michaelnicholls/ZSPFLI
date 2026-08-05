@@ -1,6 +1,6 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'projection'
-@Metadata.ignorePropagatedAnnotations: true
+//@Metadata.ignorePropagatedAnnotations: true
 define root view entity zc_spfli as projection on zspfli
 {
        @UI.facet: [ { id: 'details',
@@ -38,5 +38,9 @@ define root view entity zc_spfli as projection on zspfli
     Arrtime,
     Distid,
     Fltype,
-    Period
+    Period,
+    @UI.identification: [{ position: 50 }]
+    @UI.lineItem: [{  position: 50}]
+    
+    _next.nextdate
 } 

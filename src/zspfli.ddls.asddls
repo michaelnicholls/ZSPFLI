@@ -2,6 +2,7 @@
 @EndUserText.label: 'spfli'
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity zspfli as select from spfli
+association [0..1] to z_nextflight as _next on $projection.Carrid = _next.Carrid and $projection.Connid = _next.Connid
 
 {
     key carrid as Carrid,
@@ -18,5 +19,6 @@ define root view entity zspfli as select from spfli
     arrtime as Arrtime,
     distid as Distid,
     fltype as Fltype,
-    period as Period
+    period as Period,
+    _next
     }

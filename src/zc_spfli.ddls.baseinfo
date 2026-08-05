@@ -3,7 +3,8 @@
 {
 "FROM":
 [
-"ZSPFLI"
+"ZSPFLI",
+"Z_NEXTFLIGHT"
 ],
 "ASSOCIATED":
 [],
