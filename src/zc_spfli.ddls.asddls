@@ -13,7 +13,7 @@ define root view entity zc_spfli as projection on zspfli
  // hide on the list report, visible on the details page
     @UI.identification: [{ position: 10 }]
    
-    @Consumption.valueHelpDefinition: [{ entity:{name: 'ZC_SPFLI_ADD', element: 'Carrid' }}]
+    @Consumption.valueHelpDefinition: [{ entity:{name: 'ZC_SPFLI_ADD', element: 'carrid' }}]
     key Carrid,
     @UI.identification: [{ position: 20 }]
     @UI.lineItem: [{  position: 20}]
