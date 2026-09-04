@@ -10,7 +10,7 @@ CLASS zmn_demo DEFINITION
     types: ty_customer type table of scustom.
     class-METHODS get_customers importing value(de_only) TYPE string
         EXPORTING value(et_customers) type  ty_customer.
-
+    class-METHODS get_function_data FOR TABLE FUNCTION zcustomers.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -37,6 +37,19 @@ CLASS zmn_demo IMPLEMENTATION.
 
 
 end if;
+  ENDMETHOD.
+
+  METHOD get_function_data BY DATABASE function FOR HDB LANGUAGE SQLSCRIPT OPTIONS READ-ONLY USING scustom zcustom_de.
+  if :de_only = 'X' then
+   return select *    from zcustom_de
+    where mandt = session_context( 'CLIENT'  );
+    else
+   return select * from scustom
+    where mandt = session_context( 'CLIENT'  );
+
+ end if;
+
+
   ENDMETHOD.
 
 ENDCLASS.
