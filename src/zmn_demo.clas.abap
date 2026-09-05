@@ -11,7 +11,6 @@ CLASS zmn_demo DEFINITION
     class-METHODS get_customers importing value(de_only) TYPE string
         EXPORTING value(et_customers) type  ty_customer.
     class-METHODS get_function_data FOR TABLE FUNCTION zcustomers.
-  PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
@@ -25,6 +24,10 @@ CLASS zmn_demo IMPLEMENTATION.
   out->write( |All records found { lines( x_all ) }| ).
   get_customers( exporting de_only = 'X' importing et_customers = data(x_de) ).
   out->write( |German records found { lines( x_de ) }| ).
+  select from zcustomers(  de_only = 'X' ) fields COUNTry, count( * )  as num group by country into table @data(de_sum).
+  out->write( name = 'DE country summary by country' data = de_sum ).
+  select from zcustomers(  de_only = '' ) fields COUNTry, count( * )  as num group by country into table @data(all_sum).
+  out->write( name = 'All country summary by country' data = all_sum ).
    ENDMETHOD.
 
   METHOD get_customers
