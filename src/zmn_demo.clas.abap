@@ -11,6 +11,7 @@ CLASS zmn_demo DEFINITION
     CLASS-METHODS get_customers IMPORTING VALUE(de_only)      TYPE string
                                 EXPORTING VALUE(et_customers) TYPE  ty_customer.
     CLASS-METHODS get_function_data FOR TABLE FUNCTION zcustomers.
+    CLASS-METHODS get_my_function_data FOR TABLE FUNCTION zmy_customers.
   PRIVATE SECTION.
 ENDCLASS.
 
@@ -53,6 +54,23 @@ CLASS zmn_demo IMPLEMENTATION.
    END if;
 
 
+  ENDMETHOD.
+
+  METHOD get_my_function_data  BY DATABASE FUNCTION FOR HDB LANGUAGE SQLSCRIPT OPTIONS READ-ONLY USING usr05  scustom zcustom_de.
+  begin
+  declare de integer;
+   select count(*) into de from usr05 where bname = session_context( 'APPLICATIONUSER' )
+    and parid = 'LAN' and parva = 'DE' and mandt = session_context(  'CLIENT' );
+    if :de = 0 then
+    temp = select * from scustom
+    where mandt = session_context( 'CLIENT'  );
+     else
+    temp = select * from zcustom_de
+    where mandt = session_context( 'CLIENT'  );
+
+    end if;
+    return :temp;
+    end;
   ENDMETHOD.
 
 ENDCLASS.

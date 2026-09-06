@@ -1,0 +1,4 @@
+@EndUserText.label: 'my customers'
+define service Z_c_mycustomers {
+  expose z_c_mycustomers;
+}
