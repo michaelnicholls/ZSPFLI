@@ -60,12 +60,12 @@ CLASS zmn_demo IMPLEMENTATION.
   begin
   declare de integer;
    select count(*) into de from usr05 where bname = session_context( 'APPLICATIONUSER' )
-    and parid = 'LAN' and parva = 'DE' and mandt = session_context(  'CLIENT' );
-    if :de = 0 then
-    temp = select * from scustom
+    and parid = 'LND' and parva = 'DE' and mandt = session_context(  'CLIENT' );
+    if :de  <> 0 then
+    temp = select * from zcustom_de
     where mandt = session_context( 'CLIENT'  );
      else
-    temp = select * from zcustom_de
+    temp = select * from scustom
     where mandt = session_context( 'CLIENT'  );
 
     end if;
