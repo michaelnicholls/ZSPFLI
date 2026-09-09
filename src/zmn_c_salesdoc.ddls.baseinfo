@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"I_PRODUCTTEXT",
 "ZMN_SALSDOC"
 ],
 "ASSOCIATED":

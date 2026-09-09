@@ -15,6 +15,7 @@ define root view entity zmn_c_salesdoc as projection on zmn_salsdoc
     LastChangeDate,
     Division,
     Material,
+    _ProductText[ 1:  Language = 'E'].ProductName,
     Product,
     MaterialByCustomer,
     InternationalArticleNumber,
