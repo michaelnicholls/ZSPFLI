@@ -3,7 +3,9 @@
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity zmn_c_salesdoc as projection on zmn_salsdoc
 {
+    @UI.lineItem: [{ position: 10 }]
     key SalesDocument,
+    @UI.lineItem: [{ position: 20 }]
     key SalesDocumentItem,
     SalesDocumentItemCategory,
     SalesDocumentItemType,
@@ -14,7 +16,11 @@ define root view entity zmn_c_salesdoc as projection on zmn_salsdoc
     CreationTime,
     LastChangeDate,
     Division,
+        @UI.lineItem: [{ position: 30 }]
+    
     Material,
+        @UI.lineItem: [{ position: 40 }]
+    
     _ProductText[ 1:  Language = 'E'].ProductName,
     Product,
     MaterialByCustomer,
@@ -26,6 +32,8 @@ define root view entity zmn_c_salesdoc as projection on zmn_salsdoc
     MaterialGroup,
     ProductGroup,
     @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
+        @UI.lineItem: [{ position: 50 }]
+    
     OrderQuantity,
     OrderQuantityUnit,
     OrderToBaseQuantityDnmntr,
@@ -195,12 +203,19 @@ define root view entity zmn_c_salesdoc as projection on zmn_salsdoc
     ServiceDocument,
     ServiceDocumentItem,
     SalesDocumentType,
+    _Plant.PlantName,
     SalesOrganization,
     DistributionChannel,
     OrganizationDivision,
     SalesOffice,
     SalesGroup,
+        @UI.lineItem: [{ position: 60 }]
+
     SoldToParty,
+        @UI.lineItem: [{ position: 70 }]
+
+    
+    _SoldToParty.CustomerName,
     SalesDocumentDate,
     SDDocumentReason,
     RequestedDeliveryDate,

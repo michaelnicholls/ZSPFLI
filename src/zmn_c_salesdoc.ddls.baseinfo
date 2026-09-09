@@ -3,6 +3,8 @@
 {
 "FROM":
 [
+"I_CUSTOMER",
+"I_PLANT",
 "I_PRODUCTTEXT",
 "ZMN_SALSDOC"
 ],
