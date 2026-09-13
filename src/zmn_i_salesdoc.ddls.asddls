@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'sales doc'
+@EndUserText.label: 'sales doc root'
 @Metadata.ignorePropagatedAnnotations: false
-define root view entity zmn_salsdoc as select from I_SalesDocumentItem
+define root view entity ZMN_I_SALESDOC as select from I_SalesDocumentItem
 {
     key SalesDocument,
     key SalesDocumentItem,
