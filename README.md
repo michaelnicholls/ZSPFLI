@@ -1,5 +1,5 @@
 # ZSPFLI
-ZSPFLI
+ZSPFLI plus some CDS views based on i_documentsalesitem
 
 
 ## If problems during abapGit import
