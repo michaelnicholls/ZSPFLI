@@ -31,11 +31,11 @@ define root view entity zmn_c_salesdoc
       OrderQuantityUnit,
       @UI.lineItem: [{ position: 60 }]
       @UI.selectionField: [{position: 30}]
-      SoldToParty,
+      _SalesDocument.SoldToParty,
       @UI.lineItem: [{ position: 70 }]
 
 
-      _SoldToParty.CustomerName,
+      _SalesDocument._SoldToParty.CustomerName,
       @UI.lineItem: [{ position: 80 }]
       @EndUserText.label: 'Item status'
       _SDProcessStatus._Text[ 1:  Language = $session.system_language].SDProcessStatusDesc,
