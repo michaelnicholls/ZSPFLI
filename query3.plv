@@ -1,0 +1,1639 @@
+<?Version 31?>
+<Plan ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_1" xmlns="http://www.sap.com/ndb/planviz" Type="Executed" PlanType="QoExec">
+<SQL><![CDATA[SELECT /* FDA READ */ "SALESDOCUMENT" , "SALESDOCUMENTITEM" , "PRODUCT" , "PRODUCTNAME" , "ORDERQUANTITY" , "SOLDTOPARTY" , "CUSTOMERNAME" FROM "ZMN_C_SALESDOC" WHERE "MANDT" = ? AND "PRODUCT" LIKE ?  WITH RANGE_RESTRICTION('CURRENT')]]></SQL>
+<SystemVersion><![CDATA[{"Version":"2.00.079.00.1720729199","CompileType":"rel","USER_NAME":"Capturing USER_NAME is disabled","SCHEMA_NAME":"SAPHE4"}]]></SystemVersion>
+<RecompileState><![CDATA[COMPILED_WITH_PARAM_VALUES]]></RecompileState>
+<SessionVariables><![CDATA[{"ABAPVARCHARMODE":"TRUE","APPLICATION":"ABAP:T41","APPLICATIONCOMPONENT":"R_ST05_TRACE_FILTER","APPLICATIONCOMPONENTTYPE":"S","APPLICATIONSOURCE":"CL_SQL_STATEMENT==============CP:703","APPLICATIONUSER":"Capturing APPLICATIONUSER is disabled","APPLICATIONVERSION":"793 PL 101","APPLICATION_SERVER_INSTANCE_NAME":"wdflbmt2261_T41_00","APPLICATION_SERVER_WORKPROCESS_INDEX":"47","CDS_CLIENT":"400","CLIENT":"400","DRIVERVERSION":"2.21.28","OS_USER":"Capturing OS_USER is disabled","PROTOCOL_VERSION":"4.1 (6, 8)","SAP_PASSPORT":"2A54482A0300E600005434312F7764666C626D74323236315F5434315F303020202020202020202020000153344830302D36362020202020202020202020202020202020202020202020205354303520202020202020202020202020202020202020202020202020202020202020202020202000015434312F7764666C626D74323236315F5434315F30302020202020202020202043323438413831364231453330333030453030364141364438303442323635343430300001F3E49C638B481FD1AC82362AE02F39AA0000000000000000000000000000000000000000000000E22A54482A","SAP_SYSTEM_DATE":"20260914","SPATIAL_OUTPUT_REPRESENTATION":"EWKB","USER_DATE":"20260914","USER_TIMEZONE":"CET","XS_APPLICATIONUSER":"Capturing XS_APPLICATIONUSER is disabled"}]]></SessionVariables>
+<ParameterValues><![CDATA["Capturing Bound Parameter Values is disabled"]]></ParameterValues>
+<ProjectedColsWithDatatype><![CDATA[SALESDOCUMENT(NVARCHAR(10)), SALESDOCUMENTITEM(NVARCHAR(6)), PRODUCT(NVARCHAR(40)), PRODUCTNAME(NVARCHAR(40)), ORDERQUANTITY(DECIMAL(15, 3)), SOLDTOPARTY(NVARCHAR(10)), CUSTOMERNAME(NVARCHAR(80))]]></ProjectedColsWithDatatype>
+<CompileTime>
+	<Start Unit="us">1789377629883800</Start>
+	<End Unit="us">1789377629883885</End>
+</CompileTime>
+<StmtStats><![CDATA[]]></StmtStats>
+<StmtMemStats><![CDATA[[{"Allocated Count":1832,"Allocated Size":2047368,"Allocator Name":"Connection/309667/Statement/1330009648426342","Count in Use":1829,"Deallocated Count":1799,"Deallocated Size":1982528,"Depth":3,"Max Allocation Size (estimate)":1048576,"Max Single Allocation Size":1048576,"Size in Use":64568},{"Allocated Count":21,"Allocated Size":65048,"Allocator Name":"Connection/309667/Statement/1330009648426342/Pool/RowEngine/QueryExecution/SearchAlloc","Count in Use":21,"Deallocated Count":5,"Deallocated Size":7640,"Depth":4,"Max Allocation Size (estimate)":57408,"Max Single Allocation Size":32808,"Size in Use":57408},{"Allocated Count":1838,"Allocated Size":1985560,"Allocator Name":"Connection/309667/Statement/1330009648426342/IMPLICIT","Count in Use":1835,"Deallocated Count":1795,"Deallocated Size":1974928,"Depth":4,"Max Allocation Size (estimate)":1048576,"Max Single Allocation Size":1048576,"Size in Use":10360}]]]></StmtMemStats>
+<CompileSummary><![CDATA[{}]]></CompileSummary>
+	<RootRelation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_1" TypeName="PROJECT" InternalBufferId="2" Status="Finished">
+		<Name>COLUMN SEARCH</Name>
+		<ExecutionType>COLUMN</ExecutionType>
+		<Summary><![CDATA[ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, IPRODTEXT.PRODUCTNAME, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))]]></Summary>
+		<Location>wdflbmt2261:30303</Location>
+		<EstimatedCost>
+			<Inclusive Unit="us">2674.47</Inclusive>
+		</EstimatedCost>
+		<EstimatedOutputCardinality>115</EstimatedOutputCardinality>
+		<ExecutionTime>
+			<Start Unit="us">1789377629885095</Start>
+			<End Unit="us">1789377629916268</End>
+			<Exclusive Unit="us">275</Exclusive>
+			<Inclusive Unit="us">31173</Inclusive>
+			<Timestamps>[{"Open": [{"start":1789377629885095,"end":1789377629885148,"thread":54509},{"start":1789377629893903,"end":1789377629893906,"thread":54509}]},{"Fetch": [{"start":1789377629893957,"end":1789377629893969,"thread":54509},{"start":1789377629893976,"end":1789377629894016,"thread":54509},{"start":1789377629913298,"end":1789377629913338,"thread":54509},{"start":1789377629913352,"end":1789377629913465,"thread":54509},{"start":1789377629913465,"end":1789377629913467,"thread":54509}]},{"Close": [{"start":1789377629913486,"end":1789377629913493,"thread":54509},{"start":1789377629916263,"end":1789377629916268,"thread":54509}]}]</Timestamps>
+		</ExecutionTime>
+		<MemoryUsage>
+			<Max>0</Max>
+		</MemoryUsage>
+		<KernelCPUTime Unit="ms">0.000</KernelCPUTime>
+		<UserCPUTime Unit="ms">0.247</UserCPUTime>
+		<Details><![CDATA[{"Projected Cols":"ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, IPRODTEXT.PRODUCTNAME, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))","Recompile State":"RECOMPILED"}]]></Details>
+		<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2" >
+			<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+			<FetchCallCount>2</FetchCallCount>
+		</Child>
+	</RootRelation>
+	<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2" TypeName="TREX_SEARCH" InternalBufferId="1" Status="Finished">
+		<Name>COLUMN SEARCH</Name>
+		<ExecutionType>COLUMN</ExecutionType>
+		<Summary><![CDATA[ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, IPRODTEXT.PRODUCTNAME, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))]]></Summary>
+		<Location>wdflbmt2261:30303</Location>
+		<EstimatedCost>
+			<Inclusive Unit="us">2013.55</Inclusive>
+		</EstimatedCost>
+		<EstimatedOutputCardinality>115</EstimatedOutputCardinality>
+		<ExecutionTime>
+			<Start Unit="us">1789377629885150</Start>
+			<End Unit="us">1789377629916254</End>
+			<Exclusive Unit="us">2828</Exclusive>
+			<Inclusive Unit="us">31104</Inclusive>
+			<Timestamps>[{"Open": [{"start":1789377629885150,"end":1789377629885192,"thread":54509},{"start":1789377629893893,"end":1789377629893902,"thread":54509}]},{"Fetch": [{"start":1789377629893970,"end":1789377629893976,"thread":54509},{"start":1789377629913340,"end":1789377629913351,"thread":54509}]},{"Close": [{"start":1789377629913494,"end":1789377629916254,"thread":54509}]}]</Timestamps>
+		</ExecutionTime>
+		<MemoryUsage>
+			<Max>0</Max>
+		</MemoryUsage>
+		<KernelCPUTime Unit="ms">0.000</KernelCPUTime>
+		<UserCPUTime Unit="ms">2.815</UserCPUTime>
+		<Details><![CDATA[{"Projected Cols":"ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, IPRODTEXT.PRODUCTNAME, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))"}]]></Details>
+		<InnerPlans>
+			<Plan ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_0" Type="Estimated" PlanType="Logical">
+				<RootRelation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_0" TypeName="PROJECT">
+					<Name>COLUMN SEARCH</Name>
+					<Summary><![CDATA[ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, IPRODTEXT.PRODUCTNAME, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))]]></Summary>
+					<Property><![CDATA[(LATE MATERIALIZATION)]]></Property>
+					<Location>wdflbmt2261:30303</Location>
+					<EstimatedCost>
+						<Exclusive Unit="us">-1000000</Exclusive>
+						<Inclusive Unit="us">2013.55</Inclusive>
+					</EstimatedCost>
+					<EstimatedOutputCardinality>115</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Projected Cols":"ISDSALESDOCITEM.SALESDOCUMENT, ISDSALESDOCITEM.SALESDOCUMENTITEM, ISDSALESDOCITEM.PRODUCT, ISDSALESDOCITEM.ORDERQUANTITY, ISDSALESDOCBSC.SOLDTOPARTY, IPRODTEXT.PRODUCTNAME, RTRIM(SUBSTR(RTRIM(REPLACE(RTRIM(CONCAT(RTRIM(KNA1.NAME1), RTRIM(CONCAT(' &@', RTRIM(KNA1.NAME2))))), '&@', '')), 1, 80))"}]]></Details>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_1">
+					</Child>
+				</RootRelation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_1" TypeName="SELECT">
+					<Name>FILTER</Name>
+					<Summary><![CDATA[ISDSALESDOCITEM.PRODUCT LIKE ?2]]></Summary>
+					<EstimatedCost>
+						<Exclusive Unit="us">-1000000</Exclusive>
+						<Inclusive Unit="us">1940.82</Inclusive>
+					</EstimatedCost>
+					<EstimatedOutputCardinality>115</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Filter":"ISDSALESDOCITEM.PRODUCT LIKE ?2"}]]></Details>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_2">
+					</Child>
+				</Relation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_2" TypeName="JOIN">
+					<Name>JOIN</Name>
+					<Summary><![CDATA[JOIN CONDITION: (LEFT OUTER many-to-one) ISDSALESDOCITEM.PRODUCT = IPRODTEXT.PRODUCT, (LEFT OUTER many-to-one) ISDSALESDOCITEM.SALESDOCUMENT = ISDSALESDOCBSC.SALESDOCUMENT, (LEFT OUTER many-to-one) ISDSALESDOCBSC.SOLDTOPARTY = I_CUSTOMER_CDS.CUSTOMER]]></Summary>
+					<EstimatedCost>
+						<Exclusive Unit="us">-1000000</Exclusive>
+						<Inclusive Unit="us">1865.32</Inclusive>
+					</EstimatedCost>
+					<EstimatedOutputCardinality>493.082</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Join Condition":"(LEFT OUTER many-to-one) ISDSALESDOCITEM.PRODUCT = IPRODTEXT.PRODUCT, (LEFT OUTER many-to-one) ISDSALESDOCITEM.SALESDOCUMENT = ISDSALESDOCBSC.SALESDOCUMENT, (LEFT OUTER many-to-one) ISDSALESDOCBSC.SOLDTOPARTY = I_CUSTOMER_CDS.CUSTOMER"}]]></Details>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_3">
+					</Child>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_4">
+					</Child>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_5">
+					</Child>
+					<Child ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_6">
+					</Child>
+				</Relation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_6" TypeName="TABLE">
+					<Name>COLUMN TABLE</Name>
+					<Summary><![CDATA[FILTER CONDITION: I_CUSTOMER_CDS.MANDT =  :1  AND KNA1.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')]]></Summary>
+					<Schema><![CDATA[SAPHE4]]></Schema>
+					<TableType><![CDATA[COLUMN TABLE]]></TableType>
+					<ObjectName><![CDATA[KNA1]]></ObjectName>
+					<Location>wdflbmt2261:30303</Location>
+					<EstimatedOutputCardinality>4565.41</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Filter":"I_CUSTOMER_CDS.MANDT =  :1  AND KNA1.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')"}]]></Details>
+				</Relation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_5" TypeName="TABLE">
+					<Name>COLUMN TABLE</Name>
+					<Summary><![CDATA[FILTER CONDITION: VBAK.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')]]></Summary>
+					<Schema><![CDATA[SAPHE4]]></Schema>
+					<TableType><![CDATA[COLUMN TABLE]]></TableType>
+					<ObjectName><![CDATA[VBAK]]></ObjectName>
+					<Location>wdflbmt2261:30303</Location>
+					<EstimatedOutputCardinality>331</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Filter":"VBAK.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')"}]]></Details>
+				</Relation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_4" TypeName="TABLE">
+					<Name>COLUMN TABLE</Name>
+					<Summary><![CDATA[FILTER CONDITION: MAKT.MANDT = SESSION_CONTEXT(n'CDS_CLIENT') AND IPRODTEXT.LANGUAGE = SESSION_CONTEXT(n'LOCALE_SAP')]]></Summary>
+					<Schema><![CDATA[SAPHE4]]></Schema>
+					<TableType><![CDATA[COLUMN TABLE]]></TableType>
+					<ObjectName><![CDATA[MAKT]]></ObjectName>
+					<Location>wdflbmt2261:30303</Location>
+					<EstimatedOutputCardinality>71.0338</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Filter":"MAKT.MANDT = SESSION_CONTEXT(n'CDS_CLIENT') AND IPRODTEXT.LANGUAGE = SESSION_CONTEXT(n'LOCALE_SAP')"}]]></Details>
+				</Relation>
+				<Relation ID="ID_309667_D80AD5D6B80A954A9CEE1C46D6DAAB4E_2_3" TypeName="TABLE">
+					<Name>COLUMN TABLE</Name>
+					<Summary><![CDATA[FILTER CONDITION: ISDSALESDOCITEM.MANDT =  :1  AND VBAP.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')]]></Summary>
+					<Schema><![CDATA[SAPHE4]]></Schema>
+					<TableType><![CDATA[COLUMN TABLE]]></TableType>
+					<ObjectName><![CDATA[VBAP]]></ObjectName>
+					<Location>wdflbmt2261:30303</Location>
+					<EstimatedOutputCardinality>115</EstimatedOutputCardinality>
+					<Details><![CDATA[{"Filter":"ISDSALESDOCITEM.MANDT =  :1  AND VBAP.MANDT = SESSION_CONTEXT(n'CDS_CLIENT')"}]]></Details>
+				</Relation>
+			</Plan>
+			<Plan ID="cs_plan4190_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+				<RootRelation ID="X2_plan2357129_wdflbmt2261_30303_result0" Status="Finished">
+					<Name>Result</Name>
+					<Location><![CDATA[wdflbmt2261:30303]]></Location>
+					<Child ID="X2_plan2357129_wdflbmt2261_30303_pop25">
+						<ConnectorName><![CDATA[JEPlanDataResultDocuments]]></ConnectorName>
+						<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+						<Payload Unit="bytes">45280</Payload>
+						<Details><![CDATA[{ "description":"Result table of a query","data container member":"(column) _CV0x7fd297ebccb0","data container member":"(column) SAPHE4.MAKT.MAKTX","data container member":"(column) SAPHE4.VBAK.KUNNR","data container member":"(column) SAPHE4.VBAP.VBELN","data container member":"(column) SAPHE4.VBAP.POSNR","data container member":"(column) SAPHE4.VBAP.MATNR","data container member":"(column) SAPHE4.VBAP.KWMENG" }]]></Details>
+					</Child>
+				</RootRelation>
+				<Relation ID="X2_plan2357129_wdflbmt2261_30303" Status="Finished" Physical="False">
+					<Name><![CDATA[Column Search]]></Name>
+					<ExecutionType>Column Search</ExecutionType>
+					<Summary><![CDATA[21 nodes]]></Summary>
+					<Schema><![CDATA[SAPHE4]]></Schema>
+					<ObjectName><![CDATA[KNA1, MAKT, Temporary Table(s), VBAK, VBAP]]></ObjectName>
+					<ExecutionTime>
+						<Exclusive Unit="ms">5.419</Exclusive>
+						<Inclusive Unit="ms">5.805</Inclusive>
+						<Timestamps>[{"Pop":[{"start":1789377629886124,"end":1789377629887734}]},{"Pop":[{"start":1789377629887773,"end":1789377629887884}]},{"Pop":[{"start":1789377629887902,"end":1789377629887987}]},{"Pop":[{"start":1789377629888012,"end":1789377629888889}]},{"Pop":[{"start":1789377629888913,"end":1789377629890219}]},{"Pop":[{"start":1789377629890241,"end":1789377629890318}]},{"Pop":[{"start":1789377629890333,"end":1789377629890347}]},{"Pop":[{"start":1789377629890361,"end":1789377629890875}]},{"Pop":[{"start":1789377629890895,"end":1789377629890910}]},{"Pop":[{"start":1789377629890926,"end":1789377629890959}]},{"Pop":[{"start":1789377629890972,"end":1789377629890985}]},{"Pop":[{"start":1789377629891000,"end":1789377629891014}]},{"Pop":[{"start":1789377629891025,"end":1789377629891041}]},{"Pop":[{"start":1789377629891060,"end":1789377629891179}]},{"Pop":[{"start":1789377629891198,"end":1789377629891305}]},{"Pop":[{"start":1789377629891317,"end":1789377629891331}]},{"Pop":[{"start":1789377629891347,"end":1789377629891592}]},{"Pop":[{"start":1789377629891610,"end":1789377629891679}]},{"Pop":[{"start":1789377629891695,"end":1789377629891730}]},{"Pop":[{"start":1789377629891744,"end":1789377629891813}]},{"Pop":[{"start":1789377629891853,"end":1789377629891929}]}]</Timestamps>
+					</ExecutionTime>
+					<KernelCPUTime Unit="ms">0</KernelCPUTime>
+					<UserCPUTime Unit="ms">6.565</UserCPUTime>
+					<Details><![CDATA[{"nodes":"21","table/column processed 001":"KNA1","table/column processed 002":"KNA1.KUNNR","table/column processed 003":"MAKT.MAKTX","table/column processed 004":"MAKT.MATNR","table/column processed 005":"Temporary Table","table/column processed 006":"VBAK.KUNNR","table/column processed 007":"VBAK.VBELN","table/column processed 008":"VBAP","table/column processed 009":"VBAP.KWMENG","table/column processed 010":"VBAP.MATNR","table/column processed 011":"VBAP.POSNR","table/column processed 012":"VBAP.VBELN","schema":"SAPHE4"}]]></Details>
+					<InnerPlans>
+						<Plan ID="subplan_X2_plan2357129_wdflbmt2261_30303" PlanType="Column">
+							<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop14" TypeName="CS_POP" Status="Finished">
+								<Name><![CDATA[JEEvalPrecond]]></Name>
+								<ExecutionType>Column Search</ExecutionType>
+								<Summary><![CDATA[Access Table using 3 Filters]]></Summary>
+								<Schema><![CDATA[SAPHE4]]></Schema>
+								<ObjectName><![CDATA[VBAP]]></ObjectName>
+								<TableType><![CDATA[COLUMN TABLE]]></TableType>
+								<Location><![CDATA[wdflbmt2261:30303]]></Location>
+								<ExecutionTime>
+									<Exclusive Unit="ms">1.610</Exclusive>
+									<Inclusive Unit="ms">1.610</Inclusive>
+									<Timestamps>[{"Pop":[{"start":1789377629886124,"end":1789377629887734}]}]</Timestamps>
+								</ExecutionTime>
+								<KernelCPUTime Unit="ms">0</KernelCPUTime>
+								<UserCPUTime Unit="ms">2.454</UserCPUTime>
+								<Details><![CDATA[{"table processed":"VBAP","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.887711\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.887728\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<Search(<jeDocIdSearchPrep()=1.53>)=1.54>)=1.57>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setName('H41::SAPHE4:VBAP','en')
+.setResultFromTo(1, 18446744073709551615)
+qv=[]
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:VBAP', 'en', 'MATNR', '')
+qo.setValue('TG%', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.addTermAction(fuzzypy.TA_SQL_LIKE)
+qo.setSearchTermFlags(3073)
+qo.setId(0)
+qv.append(qo)
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:VBAP', 'en', 'MANDT', '')
+qo.setValue('400', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(2)
+qv.append(qo)
+qo = fuzzypy.QueryEntry()
+qo.setValue('AND', '', 'EQ')
+qo.setRowType('OPERATOR')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qv.append(qo)
+.setQuery(qv, 0, 0, 4)
+.setFlags(16448)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+								<InnerPlans>
+									<Plan ID="cs_plan4177_wdflbmt2261_30303" PlanType="Column" />
+								</InnerPlans>
+							</Relation>
+							<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop21" TypeName="CS_POP" Status="Finished">
+								<Name><![CDATA[JECalculate]]></Name>
+								<ExecutionType>Column Search</ExecutionType>
+								<Summary><![CDATA[Calculation rtrim ( midstru ( rtrim ( replace ( rtrim ( sqladd ( rtrim ( "SAPHE4.KNA1.NAME1" ) , rtrim ( sqladd ( ' &@' , rtrim ( "SAPHE4.KNA1.NAME2" ) ) ) ) ) , '&@' , '' ) ) , 1 , 80 ) ) on table KNA1]]></Summary>
+								<Schema><![CDATA[SAPHE4]]></Schema>
+								<ObjectName><![CDATA[KNA1]]></ObjectName>
+								<TableType><![CDATA[COLUMN TABLE]]></TableType>
+								<Location><![CDATA[wdflbmt2261:30303]]></Location>
+								<ExecutionTime>
+									<Exclusive Unit="ms">0.245</Exclusive>
+									<Inclusive Unit="ms">5.468</Inclusive>
+									<Timestamps>[{"Pop":[{"start":1789377629891347,"end":1789377629891592}]}]</Timestamps>
+								</ExecutionTime>
+								<KernelCPUTime Unit="ms">0</KernelCPUTime>
+								<UserCPUTime Unit="ms">0.261</UserCPUTime>
+								<Details><![CDATA[{"table processed":"KNA1","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891586\",\"2_key\":\"table name\",\"3_value\":\"KNA1\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891590\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<calculateOnAttr(<calculateWithAggregation(rows=115,inputs=2,outputs=1,)=0.09>rows=115,outputs=1,)=0.16>)=0.23>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".addExpression('rtrim ( midstru ( rtrim ( replace ( rtrim ( sqladd ( rtrim ( \"SAPHE4.KNA1.NAME1\" ) , rtrim ( sqladd ( \\' &@\\' , rtrim ( \"SAPHE4.KNA1.NAME2\" ) ) ) ) ) , \\'&@\\' , \\'\\' ) ) , 1 , 80 ) )')
+.addViewAttribute('_CV0x7fd297ebccb0', -1)
+.addAttribute('SAPHE4.KNA1.NAME1', 'H41::SAPHE4:KNA1en', 'NAME1')
+.addAttribute('SAPHE4.KNA1.NAME2', 'H41::SAPHE4:KNA1en', 'NAME2')
+.setIndex('H41::SAPHE4:KNA1en')
+.addEvalMapping(0, 0)
+.setQueryPart(0)
+"}]]></Details>
+								<Child ID="X2_plan2357129_wdflbmt2261_30303_pop19">
+									<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+									<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+									<Payload Unit="bytes">3524</Payload>
+									<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+								</Child>
+							</Relation>
+							<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern5" Status="Finished" Physical="False">
+								<Name><![CDATA[result assembly]]></Name>
+								<ExecutionType>Column Search</ExecutionType>
+								<Summary><![CDATA[(5 nodes) build result table with requested columns]]></Summary>
+								<Schema><![CDATA[SAPHE4]]></Schema>
+								<ObjectName><![CDATA[MAKT, Temporary Table(s), VBAK, VBAP]]></ObjectName>
+								<ExecutionTime>
+									<Exclusive Unit="ms">0.263</Exclusive>
+									<Inclusive Unit="ms">5.805</Inclusive>
+									<Timestamps>[{"Pop":[{"start":1789377629891317,"end":1789377629891331}]},{"Pop":[{"start":1789377629891610,"end":1789377629891679}]},{"Pop":[{"start":1789377629891695,"end":1789377629891730}]},{"Pop":[{"start":1789377629891744,"end":1789377629891813}]},{"Pop":[{"start":1789377629891853,"end":1789377629891929}]}]</Timestamps>
+								</ExecutionTime>
+								<KernelCPUTime Unit="ms">0</KernelCPUTime>
+								<UserCPUTime Unit="ms">0.345</UserCPUTime>
+								<Details><![CDATA[{"nodes":"5","table/column processed 001":"MAKT.MAKTX","table/column processed 002":"Temporary Table","table/column processed 003":"VBAK.KUNNR","table/column processed 004":"VBAP.KWMENG","table/column processed 005":"VBAP.MATNR","table/column processed 006":"VBAP.POSNR","table/column processed 007":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"MAKT.MAKTX","table/column processed 002":"Temporary Table","table/column processed 003":"VBAK.KUNNR","table/column processed 004":"VBAP.KWMENG","table/column processed 005":"VBAP.MATNR","table/column processed 006":"VBAP.POSNR","table/column processed 007":"VBAP.VBELN","schema":"SAPHE4"}]]></Details>
+								<InnerPlans>
+									<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern5" PlanType="Column">
+										<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop20" TypeName="CS_POP" Status="Finished">
+											<Name><![CDATA[JEUniqueColumn]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[Split Plandata]]></Summary>
+											<Schema><![CDATA[SAPHE4]]></Schema>
+											<ObjectName><![CDATA[Temporary Table]]></ObjectName>
+											<TableType><![CDATA[COLUMN TABLE]]></TableType>
+											<Location><![CDATA[wdflbmt2261:30303]]></Location>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.014</Exclusive>
+												<Inclusive Unit="ms">5.207</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629891317,"end":1789377629891331}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">0.023</UserCPUTime>
+											<Details><![CDATA[{"table/column processed":"Temporary Table","table/column processed":"Temporary Table","table/column processed":"Temporary Table","Temporary Table":"#JE_L:144_4618441417871326091","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891328\",\"2_key\":\"table name\",\"3_value\":\"<none>\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891329\",\"2_key\":\"<executePop()=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setLogicalIndex('H41::SAPHE4:#JE_L:144_4618441417871326091','en')
+.setLateMatThreshold(20000)
+.addRequestedColumn('IX_H41::SAPHE4:MAKTen', 1, 0, 18446744073709551615, 25)
+.addRequestedColumn('IX_H41::SAPHE4:VBAKen', 1, 0, 18446744073709551615, 25)
+.addRequestedColumn('IX_H41::SAPHE4:VBAPen', 1, 0, 18446744073709551615, 25)
+.setQueryPart(0)
+"}]]></Details>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop19">
+												<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">3524</Payload>
+												<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+											</Child>
+										</Relation>
+										<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop25" TypeName="CS_POP" Status="Finished">
+											<Name><![CDATA[JEAssembleResults]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[Build Result]]></Summary>
+											<Location><![CDATA[wdflbmt2261:30303]]></Location>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.076</Exclusive>
+												<Inclusive Unit="ms">5.805</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629891853,"end":1789377629891929}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">0.114</UserCPUTime>
+											<Details><![CDATA[{"PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891919\",\"2_key\":\"table name\",\"3_value\":\"#JE_L:144_4618441417871326091\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891921\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<doItThePreparedWay(cols=7,)=0.04>)=0.06>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setLogicalIndex('SAPHE4:#JE_L:144_4618441417871326091','en')
+.setAnchorTable('','en')
+.setQueryPart(0)
+.setFlags(128)
+.setReqAttr2View({'_CV0x7fd297ebccb0' : '_CV0x7fd297ebccb0','H41::SAPHE4:MAKTen/MAKTX' : 'SAPHE4.MAKT.MAKTX','H41::SAPHE4:VBAKen/KUNNR' : 'SAPHE4.VBAK.KUNNR','H41::SAPHE4:VBAPen/KWMENG' : 'SAPHE4.VBAP.KWMENG','H41::SAPHE4:VBAPen/MATNR' : 'SAPHE4.VBAP.MATNR','H41::SAPHE4:VBAPen/POSNR' : 'SAPHE4.VBAP.POSNR','H41::SAPHE4:VBAPen/VBELN' : 'SAPHE4.VBAP.VBELN'})
+.addPlaceholder('$$place_holder_0$$', '400')
+.addPlaceholder('$$place_holder_1$$', '400')
+.addPlaceholder('$$place_holder_2$$', '400')
+.addPlaceholder('$$place_holder_3$$', 'E')
+.addPlaceholder('$$place_holder_4$$', '400')
+.addPlaceholder('$$place_holder_5$$', '400')
+.addPlaceholder('$$place_holder_6$$', '400')
+.setLocale('BINARY')
+"}]]></Details>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop19">
+												<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">3524</Payload>
+												<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+											</Child>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop21">
+												<ConnectorName><![CDATA[JEPlanDataAttrVals]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">7784</Payload>
+												<Details><![CDATA[{ "data container":"vector of columns","description":"result of a projection: list of columns with type definition and values or docids","data container member":"(column) _CV0x7fd297ebccb0 (type) string" }]]></Details>
+											</Child>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop22">
+												<ConnectorName><![CDATA[JEPlanDataAttrVals]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">7784</Payload>
+												<Details><![CDATA[{ "data container":"vector of columns","description":"result of a projection: list of columns with type definition and values or docids","data container member":"(column) MAKTX (type) string" }]]></Details>
+											</Child>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop23">
+												<ConnectorName><![CDATA[JEPlanDataAttrVals]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">7784</Payload>
+												<Details><![CDATA[{ "data container":"vector of columns","description":"result of a projection: list of columns with type definition and values or docids","data container member":"(column) KUNNR (type) string" }]]></Details>
+											</Child>
+											<Child ID="X2_plan2357129_wdflbmt2261_30303_pop24">
+												<ConnectorName><![CDATA[JEPlanDataAttrVals]]></ConnectorName>
+												<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+												<Payload Unit="bytes">23496</Payload>
+												<Details><![CDATA[{ "data container":"vector of columns","description":"result of a projection: list of columns with type definition and values or docids","data container member":"(column) VBELN (type) string","data container member":"(column) POSNR (type) string","data container member":"(column) MATNR (type) string","data container member":"(column) KWMENG (type) fixed12.3" }]]></Details>
+											</Child>
+										</Relation>
+										<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern5_abstr1" Status="Finished" Physical="False">
+											<Name><![CDATA[JERequestedAttributes]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[3 nodes with same name]]></Summary>
+											<Schema><![CDATA[SAPHE4]]></Schema>
+											<ObjectName><![CDATA[MAKT, VBAK, VBAP]]></ObjectName>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.173</Exclusive>
+												<Inclusive Unit="ms">5.689</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629891610,"end":1789377629891679}]},{"Pop":[{"start":1789377629891695,"end":1789377629891730}]},{"Pop":[{"start":1789377629891744,"end":1789377629891813}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">0.208</UserCPUTime>
+											<Details><![CDATA[{"nodes":"3","table/column processed 001":"MAKT.MAKTX","table/column processed 002":"VBAK.KUNNR","table/column processed 003":"VBAP.KWMENG","table/column processed 004":"VBAP.MATNR","table/column processed 005":"VBAP.POSNR","table/column processed 006":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"MAKT.MAKTX","table/column processed 002":"VBAK.KUNNR","table/column processed 003":"VBAP.KWMENG","table/column processed 004":"VBAP.MATNR","table/column processed 005":"VBAP.POSNR","table/column processed 006":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"MAKT.MAKTX","table/column processed 002":"VBAK.KUNNR","table/column processed 003":"VBAP.KWMENG","table/column processed 004":"VBAP.MATNR","table/column processed 005":"VBAP.POSNR","table/column processed 006":"VBAP.VBELN","schema":"SAPHE4"}]]></Details>
+											<InnerPlans>
+												<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern5_abstr1" PlanType="Column">
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop22" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JERequestedAttributes]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Projection of column MAKTX]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[MAKT.MAKTX]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.069</Exclusive>
+															<Inclusive Unit="ms">5.555</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891610,"end":1789377629891679}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.081</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"MAKT.MAKTX","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891674\",\"2_key\":\"table name\",\"3_value\":\"MAKT\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891676\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<valuearray(attrs=1,rows=115,)=0.04><reorder()=0.00>)=0.05>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:MAKT','en')
+.addAttribute('MAKTX', 1)
+.setFlags(132)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop20">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3524</Payload>
+															<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop23" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JERequestedAttributes]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Projection of column KUNNR]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAK.KUNNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.035</Exclusive>
+															<Inclusive Unit="ms">5.606</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891695,"end":1789377629891730}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.048</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAK.KUNNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891726\",\"2_key\":\"table name\",\"3_value\":\"VBAK\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891728\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<valuearray(attrs=1,rows=115,)=0.02><reorder()=0.00>)=0.02>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:VBAK','en')
+.addAttribute('KUNNR', 1)
+.setFlags(132)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop20">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3524</Payload>
+															<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop24" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JERequestedAttributes]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Projection of columns VBELN, POSNR, MATNR, KWMENG]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAP]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.069</Exclusive>
+															<Inclusive Unit="ms">5.689</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891744,"end":1789377629891813}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.079</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAP.VBELN","table/column processed 002":"VBAP.POSNR","table/column processed 003":"VBAP.MATNR","table/column processed 004":"VBAP.KWMENG","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891808\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891810\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<valuearray(attrs=4,rows=115,)=0.05><reorder()=0.00>)=0.06>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:VBAP','en')
+.addAttribute('VBELN', 1)
+.addAttribute('POSNR', 1)
+.addAttribute('MATNR', 1)
+.addAttribute('KWMENG', 1)
+.setFlags(132)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop20">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3524</Payload>
+															<Details><![CDATA[{ "data container":"vector of vector of integers","description":"matrix of internal docid values containing the result of a join" }]]></Details>
+														</Child>
+													</Relation>
+												</Plan>
+											</InnerPlans>
+										</Relation>
+									</Plan>
+								</InnerPlans>
+							</Relation>
+							<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern6" Status="Finished" Physical="False">
+								<Name><![CDATA[join]]></Name>
+								<ExecutionType>Column Search</ExecutionType>
+								<Summary><![CDATA[(14 nodes) composition of semijoins]]></Summary>
+								<Schema><![CDATA[SAPHE4]]></Schema>
+								<ObjectName><![CDATA[KNA1, MAKT, VBAK, VBAP]]></ObjectName>
+								<ExecutionTime>
+									<Exclusive Unit="ms">3.301</Exclusive>
+									<Inclusive Unit="ms">5.181</Inclusive>
+									<Timestamps>[{"Pop":[{"start":1789377629887773,"end":1789377629887884}]},{"Pop":[{"start":1789377629887902,"end":1789377629887987}]},{"Pop":[{"start":1789377629888012,"end":1789377629888889}]},{"Pop":[{"start":1789377629888913,"end":1789377629890219}]},{"Pop":[{"start":1789377629890241,"end":1789377629890318}]},{"Pop":[{"start":1789377629890333,"end":1789377629890347}]},{"Pop":[{"start":1789377629890361,"end":1789377629890875}]},{"Pop":[{"start":1789377629890895,"end":1789377629890910}]},{"Pop":[{"start":1789377629890926,"end":1789377629890959}]},{"Pop":[{"start":1789377629890972,"end":1789377629890985}]},{"Pop":[{"start":1789377629891000,"end":1789377629891014}]},{"Pop":[{"start":1789377629891025,"end":1789377629891041}]},{"Pop":[{"start":1789377629891060,"end":1789377629891179}]},{"Pop":[{"start":1789377629891198,"end":1789377629891305}]}]</Timestamps>
+								</ExecutionTime>
+								<KernelCPUTime Unit="ms">0</KernelCPUTime>
+								<UserCPUTime Unit="ms">3.505</UserCPUTime>
+								<Details><![CDATA[{"nodes":"14","table/column processed 001":"KNA1.KUNNR","table/column processed 002":"MAKT.MATNR","table/column processed 003":"VBAK.KUNNR","table/column processed 004":"VBAK.VBELN","table/column processed 005":"VBAP.MATNR","table/column processed 006":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"KNA1.KUNNR","table/column processed 002":"MAKT.MATNR","table/column processed 003":"VBAK.KUNNR","table/column processed 004":"VBAK.VBELN","table/column processed 005":"VBAP.MATNR","table/column processed 006":"VBAP.VBELN","schema":"SAPHE4"}]]></Details>
+								<InnerPlans>
+									<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern6" PlanType="Column">
+										<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern1" Status="Finished" Physical="False">
+											<Name><![CDATA[reduction phase]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[(4 nodes) reduce data prior to join]]></Summary>
+											<Schema><![CDATA[SAPHE4]]></Schema>
+											<ObjectName><![CDATA[VBAK, VBAP]]></ObjectName>
+											<ExecutionTime>
+												<Exclusive Unit="ms">1.445</Exclusive>
+												<Inclusive Unit="ms">4.890</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629887773,"end":1789377629887884}]},{"Pop":[{"start":1789377629888913,"end":1789377629890219}]},{"Pop":[{"start":1789377629890333,"end":1789377629890347}]},{"Pop":[{"start":1789377629891000,"end":1789377629891014}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">1.51</UserCPUTime>
+											<Details><![CDATA[{"nodes":"4","table/column processed 001":"VBAK.VBELN","table/column processed 002":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"VBAK.VBELN","table/column processed 002":"VBAP.VBELN","schema":"SAPHE4","table/column processed 001":"VBAK.VBELN","table/column processed 002":"VBAP.VBELN","schema":"SAPHE4"}]]></Details>
+											<InnerPlans>
+												<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern1" PlanType="Column">
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop10" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep3b]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin3]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAK.VBELN]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.014</Exclusive>
+															<Inclusive Unit="ms">4.223</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890333,"end":1789377629890347}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.026</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAK.VBELN","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890343\",\"2_key\":\"table name\",\"3_value\":\"VBAK\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890345\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<uniqueValues(in=90,out=90,)=0.00>)=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAK','en','VID_H41::SAPHE4:VBAPen/VBELN')
+.setMarkValue(-13)
+.setEdgeId(1)
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop8">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3370</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop13" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep1]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin1 (first join partner)]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAP.VBELN]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.111</Exclusive>
+															<Inclusive Unit="ms">1.760</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629887773,"end":1789377629887884}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.132</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAP.VBELN","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.887877\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.887881\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<jeReadValueIds()=0.01><uniqueHeadValues(<uniqueHeadValues(<uniqueHeadValues(<uniqueValues(<eraseUnique(un=90,)=0.00>sz=115,)=0.01>line=582,)=0.02>line=572,)=0.02><uniqueHeadValues(<removeTuples(<eraseRows(NumCols=1,)=0.00>in=90,partitions=0,out=90,)=0.00>line=618,)=0.01>in=115,out=90,)=0.04><getApproxCounts()=0.01>)=0.09>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAP','en',['VBELN'], [0])
+.setEdgeId(1)
+.setRuntimeValues(-11, -13, [])
+.setJoinPartType(2)
+.setFlags(16)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop14">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">200</Payload>
+															<Details><![CDATA[{ "description":"result of the evaluation of a filter condition" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop16" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep4]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin4]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAP.VBELN]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.014</Exclusive>
+															<Inclusive Unit="ms">4.890</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891000,"end":1789377629891014}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.027</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAP.VBELN","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891010\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891011\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<markTuplesNotInTL(num=115,BVfallback=1,numMarked=0,)=0.00>)=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAP','en','en',['VBELN'])
+.setJoinPartType(2)
+.setEdgeId(1)
+.setRuntimeValues(-11, -13, [])
+.setOutputMask(0)
+.setOutputHeadName('IX_H41::SAPHE4:VBAPen',False)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop13">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop10">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">841</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop8" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep2]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin2 (second join partner) ]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAK.VBELN]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">1.306</Exclusive>
+															<Inclusive Unit="ms">4.095</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629888913,"end":1789377629890219}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">1.325</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAK.VBELN","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.888999\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: VBELN, table: VBAK (Delta 1), schema: SAPHE4]\",\"4_duration\":\"0.011\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.889015\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: VBELN, table: VBAK, schema: SAPHE4]\",\"4_duration\":\"0.012\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890210\",\"2_key\":\"table name\",\"3_value\":\"VBAK\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890214\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<jeGetApproxCounts(attrs=1,)=0.01><fillTT(numTT=1,)=0.00><translate_remove_li_vec(size=90,newSize=90,)=0.00><jeReadIndex(<issFill()=0.01>in=90,out=169,)=0.06><translate_mark_li_vec(size=169,)=0.00><evalPrecondition(<jeDocIdSearchPrep()=1.15>hits=90,)=1.15><markTuplesNotInMdVBV(num=169,numMarked=79,)=0.00><removeTuples(<eraseRows(NumCols=2,)=0.00>in=169,partitions=0,out=90,)=0.00><tlsort(rows=90,)=0.00>)=1.29>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:VBAKen')
+attrFrom=['VBELN']
+attrTo=['VBELN']
+parts=[('H41::SAPHE4:VBAPen', 1, 4294967295, 0)]
+.addReducer('H41::SAPHE4:VBAPen', attrFrom, attrTo, parts, 0, flags=1, sortAttrs=[])
+.setFlags(0)
+.setMarkValue(-13)
+.setISSInput(4294967295)
+qv=[]
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:VBAK', 'en', 'MANDT', '')
+qo.setValue('400', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(8)
+qv.append(qo)
+.setPreCondition(qv, 2, 331, 0, 0, [], 4294967295)
+.prepare()
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop13">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">941</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<InnerPlans>
+															<Plan ID="cs_plan4183_wdflbmt2261_30303" PlanType="Column" />
+														</InnerPlans>
+													</Relation>
+												</Plan>
+											</InnerPlans>
+										</Relation>
+										<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern2" Status="Finished" Physical="False">
+											<Name><![CDATA[reduction phase]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[(4 nodes) reduce data prior to join]]></Summary>
+											<Schema><![CDATA[SAPHE4]]></Schema>
+											<ObjectName><![CDATA[KNA1, VBAK]]></ObjectName>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.639</Exclusive>
+												<Inclusive Unit="ms">4.835</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629890241,"end":1789377629890318}]},{"Pop":[{"start":1789377629890361,"end":1789377629890875}]},{"Pop":[{"start":1789377629890895,"end":1789377629890910}]},{"Pop":[{"start":1789377629890926,"end":1789377629890959}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">0.693</UserCPUTime>
+											<Details><![CDATA[{"nodes":"4","table/column processed 001":"KNA1.KUNNR","table/column processed 002":"VBAK.KUNNR","schema":"SAPHE4","table/column processed 001":"KNA1.KUNNR","table/column processed 002":"VBAK.KUNNR","schema":"SAPHE4","table/column processed 001":"KNA1.KUNNR","table/column processed 002":"VBAK.KUNNR","schema":"SAPHE4"}]]></Details>
+											<InnerPlans>
+												<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern2" PlanType="Column">
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop11" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep4]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin4]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAK.KUNNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.033</Exclusive>
+															<Inclusive Unit="ms">4.835</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890926,"end":1789377629890959}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.045</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAK.KUNNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890954\",\"2_key\":\"table name\",\"3_value\":\"VBAK\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890957\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<markTuplesNotInTL(num=90,BVfallback=1,numMarked=1,)=0.00><tlsort(<sort(<NTuple Sort(NumCols=2,NumRows=90,)=0.00>)=0.01>rows=90,)=0.01>)=0.02>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAK','en','en',['KUNNR'])
+.setJoinPartType(2)
+.setEdgeId(2)
+.setRuntimeValues(-12, -13, [])
+.setOutputMask(0)
+.setOutputHeadName('IX_H41::SAPHE4:VBAKen',True)
+.setFlags(1)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop9">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1602</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop3">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>13</ExecutedOutputCardinality>
+															<Payload Unit="bytes">533</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop2" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep2]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin2 (second join partner) ]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[KNA1.KUNNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.514</Exclusive>
+															<Inclusive Unit="ms">4.751</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890361,"end":1789377629890875}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.527</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"KNA1.KUNNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890412\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: KUNNR, table: KNA1 (Delta 1), schema: SAPHE4]\",\"4_duration\":\"0.012\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890426\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: KUNNR, table: KNA1, schema: SAPHE4]\",\"4_duration\":\"0.010\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890869\",\"2_key\":\"table name\",\"3_value\":\"KNA1\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890872\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<jeGetApproxCounts(attrs=1,)=0.01><fillTT(numTT=1,)=0.00><translate_remove_li_vec(size=14,newSize=13,)=0.00><jeReadIndex(in=13,checkValidEst=16,out=24,)=0.04><translate_mark_li_hash(size=24,)=0.00><evalPrecondition(<jeDocIdSearchPrep()=0.38>hits=13,)=0.39><markTuplesNotInMdVBV(num=24,numMarked=11,)=0.00><removeTuples(<eraseRows(NumCols=2,)=0.00>in=24,partitions=0,out=13,)=0.00><tlsort(rows=13,)=0.00>)=0.50>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:KNA1en')
+attrFrom=['KUNNR']
+attrTo=['KUNNR']
+parts=[('H41::SAPHE4:VBAKen', 1, 4294967295, 0)]
+.addReducer('H41::SAPHE4:VBAKen', attrFrom, attrTo, parts, 0, flags=1, sortAttrs=[])
+.setFlags(0)
+.setMarkValue(-13)
+.setISSInput(4294967295)
+qv=[]
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:KNA1', 'en', 'MANDT', '')
+qo.setValue('400', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(9)
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:KNA1', 'en', 'MANDT', '')
+qo.setValue('400', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(10)
+qo = fuzzypy.QueryEntry()
+qo.setValue('AND', '', 'EQ')
+qo.setRowType('OPERATOR')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(16)
+qo.setId(11)
+qv.append(qo)
+.setPreCondition(qv, 3, 4500, 0, 0, [], 4294967295)
+.prepare()
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop9">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>14</ExecutedOutputCardinality>
+															<Payload Unit="bytes">841</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<InnerPlans>
+															<Plan ID="cs_plan4186_wdflbmt2261_30303" PlanType="Column" />
+														</InnerPlans>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop3" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep3b]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin3]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[KNA1.KUNNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.015</Exclusive>
+															<Inclusive Unit="ms">4.786</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890895,"end":1789377629890910}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.031</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"KNA1.KUNNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890906\",\"2_key\":\"table name\",\"3_value\":\"KNA1\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890908\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<uniqueValues(in=13,out=13,)=0.00>)=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:KNA1','en','VID_H41::SAPHE4:VBAKen/KUNNR')
+.setMarkValue(-13)
+.setEdgeId(2)
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop2">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>13</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1122</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop9" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep1]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin1 (first join partner)]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAK.KUNNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.077</Exclusive>
+															<Inclusive Unit="ms">4.194</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890241,"end":1789377629890318}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.09</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAK.KUNNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890312\",\"2_key\":\"table name\",\"3_value\":\"VBAK\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890315\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<extractUDIVs()=0.00><get_rid_of_null_values(in=90,out=90,)=0.00><jeReadValueIds()=0.01><uniqueHeadValues(<uniqueHeadValues(<uniqueHeadValues(<uniqueValues(<eraseUnique(un=14,)=0.00>sz=90,)=0.00>line=582,)=0.01>line=572,)=0.01><uniqueHeadValues(<removeTuples(<eraseRows(NumCols=1,)=0.00>in=14,partitions=0,out=14,)=0.00>line=618,)=0.00>in=90,out=14,)=0.02><getApproxCounts()=0.00>)=0.06>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAK','en',['KUNNR'], [0])
+.setEdgeId(2)
+.setRuntimeValues(-12, -13, [])
+.setJoinPartType(2)
+.setFlags(16)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop8">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3370</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+												</Plan>
+											</InnerPlans>
+										</Relation>
+										<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern3" Status="Finished" Physical="False">
+											<Name><![CDATA[reduction phase]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[(4 nodes) reduce data prior to join]]></Summary>
+											<Schema><![CDATA[SAPHE4]]></Schema>
+											<ObjectName><![CDATA[MAKT, VBAP]]></ObjectName>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.991</Exclusive>
+												<Inclusive Unit="ms">4.917</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629887902,"end":1789377629887987}]},{"Pop":[{"start":1789377629888012,"end":1789377629888889}]},{"Pop":[{"start":1789377629890972,"end":1789377629890985}]},{"Pop":[{"start":1789377629891025,"end":1789377629891041}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">1.043</UserCPUTime>
+											<Details><![CDATA[{"nodes":"4","table/column processed 001":"MAKT.MATNR","table/column processed 002":"VBAP.MATNR","schema":"SAPHE4","table/column processed 001":"MAKT.MATNR","table/column processed 002":"VBAP.MATNR","schema":"SAPHE4","table/column processed 001":"MAKT.MATNR","table/column processed 002":"VBAP.MATNR","schema":"SAPHE4"}]]></Details>
+											<InnerPlans>
+												<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern3" PlanType="Column">
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop15" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep1]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin1 (first join partner)]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAP.MATNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.085</Exclusive>
+															<Inclusive Unit="ms">1.863</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629887902,"end":1789377629887987}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.099</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAP.MATNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.887977\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.887981\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<jeReadValueIds()=0.00><uniqueHeadValues(<uniqueHeadValues(<uniqueHeadValues(<uniqueValues(<eraseUnique(un=6,)=0.00>sz=115,)=0.01>line=582,)=0.01>line=572,)=0.01><uniqueHeadValues(<removeTuples(<eraseRows(NumCols=1,)=0.00>in=6,partitions=0,out=6,)=0.00>line=618,)=0.01>in=115,out=6,)=0.03><getApproxCounts()=0.00>)=0.06>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAP','en',['MATNR'], [0])
+.setEdgeId(0)
+.setRuntimeValues(-10, -13, [])
+.setJoinPartType(2)
+.setFlags(16)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop14">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">200</Payload>
+															<Details><![CDATA[{ "description":"result of the evaluation of a filter condition" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop17" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep4]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin4]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[VBAP.MATNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.016</Exclusive>
+															<Inclusive Unit="ms">4.917</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891025,"end":1789377629891041}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.025</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"VBAP.MATNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891037\",\"2_key\":\"table name\",\"3_value\":\"VBAP\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891040\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<markTuplesNotInTL(num=115,BVfallback=1,numMarked=0,)=0.00><tlsort(rows=115,)=0.00>)=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:VBAP','en','en',['MATNR'])
+.setJoinPartType(2)
+.setEdgeId(0)
+.setRuntimeValues(-10, -13, [])
+.setOutputMask(0)
+.setOutputHeadName('IX_H41::SAPHE4:VBAPen',True)
+.setFlags(1)
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop15">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop6">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+															<Payload Unit="bytes">505</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop5" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep2]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin2 (second join partner) ]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[MAKT.MATNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.877</Exclusive>
+															<Inclusive Unit="ms">2.765</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629888012,"end":1789377629888889}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.897</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"MAKT.MATNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.888099\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: MATNR, table: MAKT (Delta 1), schema: SAPHE4]\",\"4_duration\":\"0.025\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.888132\",\"2_key\":\"column access\",\"3_value\":\"Inverted index: used [column: MATNR, table: MAKT, schema: SAPHE4]\",\"4_duration\":\"0.026\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.888880\",\"2_key\":\"table name\",\"3_value\":\"MAKT\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.888885\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<jeGetApproxCounts(attrs=1,)=0.01><fillTT(numTT=1,)=0.00><translate_remove_li_vec(size=6,newSize=6,)=0.00><jeReadIndex(in=6,checkValidEst=26,out=468,)=0.10><translate_remove_hash(size=6,newSize=6,)=0.00><translate_mark_li_no_abort_hash(size=468,)=0.01><evalPrecondition(<jeDocIdSearchPrep()=0.64>hits=6,)=0.64><markTuplesNotInMdVBV(num=468,numMarked=462,)=0.00><removeTuples(<eraseRows(NumCols=2,)=0.00>in=468,partitions=0,out=6,)=0.00><tlsort(rows=6,)=0.00>)=0.86>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setIndex('H41::SAPHE4:MAKTen')
+attrFrom=['MATNR']
+attrTo=['MATNR']
+parts=[('H41::SAPHE4:VBAPen', 1, 4294967295, 0)]
+.addReducer('H41::SAPHE4:VBAPen', attrFrom, attrTo, parts, 0, flags=1, sortAttrs=[])
+.setFlags(0)
+.setMarkValue(-13)
+.setISSInput(4294967295)
+qv=[]
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:MAKT', 'en', 'MANDT', '')
+qo.setValue('400', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(5)
+qo = fuzzypy.QueryEntry()
+qo.setLocation('SAPHE4:MAKT', 'en', 'SPRAS', '')
+qo.setValue('E', '', 'EQ')
+qo.setRowType('ATTRIBUTE')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(2065)
+qo.setId(6)
+qo = fuzzypy.QueryEntry()
+qo.setValue('AND', '', 'EQ')
+qo.setRowType('OPERATOR')
+qo.setContentType(fuzzypy.CT_CONTENT)
+qo.setSearchTermFlags(16)
+qo.setId(7)
+qv.append(qo)
+.setPreCondition(qv, 1, 25107, 0, 0, [], 4294967295)
+.prepare()
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop15">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+															<Payload Unit="bytes">941</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<InnerPlans>
+															<Plan ID="cs_plan4180_wdflbmt2261_30303" PlanType="Column" />
+														</InnerPlans>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop6" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEStep3b]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Semijoin3]]></Summary>
+														<Schema><![CDATA[SAPHE4]]></Schema>
+														<ObjectName><![CDATA[MAKT.MATNR]]></ObjectName>
+														<TableType><![CDATA[COLUMN TABLE]]></TableType>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.013</Exclusive>
+															<Inclusive Unit="ms">4.861</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629890972,"end":1789377629890985}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.022</UserCPUTime>
+														<Details><![CDATA[{"table/column processed 001":"MAKT.MATNR","PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.890980\",\"2_key\":\"table name\",\"3_value\":\"MAKT\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.890982\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<uniqueValues(in=6,out=6,)=0.00>)=0.00>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setNames('H41::SAPHE4:MAKT','en','VID_H41::SAPHE4:VBAPen/MATNR')
+.setMarkValue(-13)
+.setEdgeId(0)
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop5">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+															<Payload Unit="bytes">7538</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+												</Plan>
+											</InnerPlans>
+										</Relation>
+										<Relation ID="cs_plan4190_wdflbmt2261_30303_pattern4" Status="Finished" Physical="False">
+											<Name><![CDATA[work up data]]></Name>
+											<ExecutionType>Column Search</ExecutionType>
+											<Summary><![CDATA[(2 nodes) preprocess/finalize]]></Summary>
+											<ExecutionTime>
+												<Exclusive Unit="ms">0.226</Exclusive>
+												<Inclusive Unit="ms">5.181</Inclusive>
+												<Timestamps>[{"Pop":[{"start":1789377629891060,"end":1789377629891179}]},{"Pop":[{"start":1789377629891198,"end":1789377629891305}]}]</Timestamps>
+											</ExecutionTime>
+											<KernelCPUTime Unit="ms">0</KernelCPUTime>
+											<UserCPUTime Unit="ms">0.259</UserCPUTime>
+											<Details><![CDATA[{"nodes":"2"}]]></Details>
+											<InnerPlans>
+												<Plan ID="subplan_cs_plan4190_wdflbmt2261_30303_pattern4" PlanType="Column">
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop18" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JEPrepareData]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Prepare Plandata add connection pairs]]></Summary>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.119</Exclusive>
+															<Inclusive Unit="ms">5.055</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891060,"end":1789377629891179}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.135</UserCPUTime>
+														<Details><![CDATA[{"PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891173\",\"2_key\":\"table name\",\"3_value\":\"<none>\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891176\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<checkFlags(num=13,)=0.00><checkFlags(num=6,)=0.00><checkFlags(num=90,)=0.00><checkFlags(num=90,)=0.00><checkFlags(num=115,)=0.00><checkFlags(num=115,)=0.00><findAndAddConnectors(<addOuterValues(num=13,add=1,)=0.00>num=13,)=0.01><findAndAddConnectors(num=6,)=0.00><findAndAddConnectors(num=90,)=0.00><findAndAddConnectors(num=90,)=0.00><findAndAddConnectors(num=115,)=0.00><findAndAddConnectors(num=115,)=0.00>)=0.10>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".addInfo('IX_H41::SAPHE4:VBAPen', 'VID_H41::SAPHE4:VBAPen/VBELN', 1, 0, 1, 0, 4, -1, 1, 0)
+.addInfo('VID_H41::SAPHE4:VBAPen/VBELN', 'IX_H41::SAPHE4:VBAKen', 0, 1, 0, 0, -1, -1, 1, 1)
+.addInfo('IX_H41::SAPHE4:VBAKen', 'VID_H41::SAPHE4:VBAKen/KUNNR', 0, 0, 0, 0, -1, -1, 2, 2)
+.addInfo('VID_H41::SAPHE4:VBAKen/KUNNR', 'IX_H41::SAPHE4:KNA1en', 0, 1, 0, 1, -1, -1, 2, 3)
+.addInfo('IX_H41::SAPHE4:VBAPen', 'VID_H41::SAPHE4:VBAPen/MATNR', 0, 0, 0, 0, -1, -1, 0, 4)
+.addInfo('VID_H41::SAPHE4:VBAPen/MATNR', 'IX_H41::SAPHE4:MAKTen', 0, 1, 0, 1, -1, -1, 0, 5)
+.setFlags(1)
+.addNullPartition('H41::SAPHE4:KNA1en', [])
+.addNullPartition('H41::SAPHE4:MAKTen', [])
+.addNullPartition('H41::SAPHE4:VBAKen', [])
+.addNullPartition('H41::SAPHE4:VBAPen', [])
+.addJSpec(2, False, 0, -10, -13, [('SAPHE4:VBAP', 'en', 'MATNR', 0, 'SAPHE4:MAKT', 'en', 'MATNR', 0)])
+.addJSpec(2, False, 1, -11, -13, [('SAPHE4:VBAP', 'en', 'VBELN', 0, 'SAPHE4:VBAK', 'en', 'VBELN', 0)])
+.addJSpec(2, False, 2, -12, -13, [('SAPHE4:VBAK', 'en', 'KUNNR', 0, 'SAPHE4:KNA1', 'en', 'KUNNR', 0)])
+.setLocale('BINARY')
+.setQueryPart(0)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop2">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>13</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1122</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop5">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+															<Payload Unit="bytes">7538</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop8">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3370</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop11">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1602</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop16">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop17">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+													<Relation ID="X2_plan2357129_wdflbmt2261_30303_pop19" TypeName="CS_POP" Status="Finished">
+														<Name><![CDATA[JECreateNTuple]]></Name>
+														<ExecutionType>Column Search</ExecutionType>
+														<Summary><![CDATA[Sorted Merge Join]]></Summary>
+														<Location><![CDATA[wdflbmt2261:30303]]></Location>
+														<ExecutionTime>
+															<Exclusive Unit="ms">0.107</Exclusive>
+															<Inclusive Unit="ms">5.181</Inclusive>
+															<Timestamps>[{"Pop":[{"start":1789377629891198,"end":1789377629891305}]}]</Timestamps>
+														</ExecutionTime>
+														<KernelCPUTime Unit="ms">0</KernelCPUTime>
+														<UserCPUTime Unit="ms">0.124</UserCPUTime>
+														<Details><![CDATA[{"PerformanceTrace":"{\"details\":[{\"1_timestamp\":\"2026-09-14 09:20:29.891298\",\"2_key\":\"table name\",\"3_value\":\"<none>\",\"9_location\":\"wdflbmt2261:30303\"},{\"1_timestamp\":\"2026-09-14 09:20:29.891301\",\"2_key\":\"<large detail>\",\"3_value\":\"<executePop(<loop(<RowInfo(produced=115,discarded=0,deadEnds=0,)=0.00>numCores=1,cols=4,rows=115,)=0.08>)=0.09>\",\"9_location\":\"wdflbmt2261:30303\"}]}","PythonTrace":".setQueryPart(0)
+.addInfo('IX_H41::SAPHE4:VBAPen', 'VID_H41::SAPHE4:VBAPen/VBELN', 1, 0, 1, 0, 4, -1, 1, 0)
+.addInfo('VID_H41::SAPHE4:VBAPen/VBELN', 'IX_H41::SAPHE4:VBAKen', 0, 1, 0, 0, -1, -1, 1, 1)
+.addInfo('IX_H41::SAPHE4:VBAKen', 'VID_H41::SAPHE4:VBAKen/KUNNR', 0, 0, 0, 0, -1, -1, 2, 2)
+.addInfo('VID_H41::SAPHE4:VBAKen/KUNNR', 'IX_H41::SAPHE4:KNA1en', 0, 1, 0, 1, -1, -1, 2, 3)
+.addInfo('IX_H41::SAPHE4:VBAPen', 'VID_H41::SAPHE4:VBAPen/MATNR', 0, 0, 0, 0, -1, -1, 0, 4)
+.addInfo('VID_H41::SAPHE4:VBAPen/MATNR', 'IX_H41::SAPHE4:MAKTen', 0, 1, 0, 1, -1, -1, 0, 5)
+.setFlags(256)
+.setEstimatedResultSize(19)
+"}]]></Details>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>14</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1122</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+															<Payload Unit="bytes">7538</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">3370</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1602</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+														<Child ID="X2_plan2357129_wdflbmt2261_30303_pop18">
+															<ConnectorName><![CDATA[JEPlanData]]></ConnectorName>
+															<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+															<Payload Unit="bytes">1802</Payload>
+															<Details><![CDATA[{ "data container":"vector of integer pairs: (docid, valueid)","description":"result of semi-join reduction" }]]></Details>
+														</Child>
+													</Relation>
+												</Plan>
+											</InnerPlans>
+										</Relation>
+									</Plan>
+								</InnerPlans>
+							</Relation>
+						</Plan>
+					</InnerPlans>
+				</Relation>
+			</Plan>
+		</InnerPlans>
+	</Relation>
+
+	<ReferencedPlans>
+		<Plan ID="cs_plan4186_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4186_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<Child ID="cs_plan4186_wdflbmt2261_30303_oltpSearchNode1">
+					<ConnectorName><![CDATA[SearchAPI::SearchResults]]></ConnectorName>
+					<ExecutedOutputCardinality>13</ExecutedOutputCardinality>
+					<Payload Unit="bytes">200</Payload>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4186_wdflbmt2261_30303_oltpSearchNode1" TypeName="FAST_SEARCH" Status="Finished">
+				<Name><![CDATA[dynamic search]]></Name>
+				<Summary><![CDATA[estimate first & optimize search accordingly]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[KNA1]]></ObjectName>
+				<TableType><![CDATA[COLUMN TABLE]]></TableType>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.227</Exclusive>
+					<Inclusive Unit="ms">0.364</Inclusive>
+					<Timestamps>[{"Pop":[{"name":"execution","start":1789377629890466,"end":1789377629890693}]},{"PlanVizOverhead":[{"name":"planviz","start":1789377629890693,"end":1789377629890830}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"FunctionProfiler":"[{\"Start Time\":\"2026-09-14 09:20:29.890\",\"Steps\":[{\"Children\":0.074,\"Name\":\"QO [SAPHE4:KNA1[0]MANDT(201):'400'[EQ]<TA:> [1]MANDT(201):'400'[EQ]<TA:> [2]AND \",\"Self\":0.013,\"Steps\":[{\"Children\":0.032,\"Name\":\"evaluate\",\"Self\":0.003,\"Steps\":[{\"Children\":0.026,\"Name\":\"evaluateTerm [1]\",\"Self\":0.006,\"Steps\":[{\"Children\":0.02,\"Name\":\"doSearch\",\"Self\":0.006,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":13,\"Name\":\"result size\"}],\"Total\":0.02},{\"Count\":13,\"Name\":\"result size\"}],\"Total\":0.026}],\"Total\":0.032},{\"Count\":13,\"Name\":\"result size\"}],\"Total\":0.035},{\"Children\":0.011,\"Name\":\"buildTree\",\"Self\":0.01,\"Steps\":[{\"Children\":0.008,\"Name\":\"optimizeTree\",\"Self\":0.003,\"Steps\":[{\"Name\":\"checkOpNodes2\",\"Steps\":[{\"Name\":\"checkBetween\",\"Total\":0.0},{\"Name\":\"collectNodes\",\"Total\":0.0}],\"Total\":0.007},{\"Name\":\"setupTermNodes\",\"Total\":0.001}],\"Total\":0.011}],\"Total\":0.021},{\"Name\":\"finalize planviz\",\"Total\":0.009},{\"Name\":\"validate [udivMgr]\",\"Steps\":[{\"Count\":13,\"Name\":\"result size\"}],\"Total\":0.006},{\"Name\":\"estimate\",\"Total\":0.002},{\"Name\":\"materializeResult\",\"Total\":0.001}],\"Total\":0.087}],\"Thread\":54509},{\"Start Time\":\"2026-09-14 09:20:29.890\",\"Steps\":[{\"Name\":\"QO [SAPHE4:KNA1$delta_1$[0]MANDT(201):'400'[EQ]<TA:> [1]MANDT(201):'400'[EQ]<TA:> [2]AND \",\"Total\":0.007}],\"Thread\":54509}]"}]]></Details>
+				<InnerPlans>
+					<Plan ID="cs_plan4187_wdflbmt2261_30303" PlanType="Column" />
+					<Plan ID="cs_plan4188_wdflbmt2261_30303" PlanType="Column" />
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4180_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4180_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<Child ID="cs_plan4180_wdflbmt2261_30303_oltpSearchNode1">
+					<ConnectorName><![CDATA[SearchAPI::SearchResults]]></ConnectorName>
+					<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+					<Payload Unit="bytes">200</Payload>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4180_wdflbmt2261_30303_oltpSearchNode1" TypeName="FAST_SEARCH" Status="Finished">
+				<Name><![CDATA[dynamic search]]></Name>
+				<Summary><![CDATA[estimate first & optimize search accordingly]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[MAKT]]></ObjectName>
+				<TableType><![CDATA[COLUMN TABLE]]></TableType>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.401</Exclusive>
+					<Inclusive Unit="ms">0.617</Inclusive>
+					<Timestamps>[{"Pop":[{"name":"execution","start":1789377629888216,"end":1789377629888617}]},{"PlanVizOverhead":[{"name":"planviz","start":1789377629888617,"end":1789377629888833}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"FunctionProfiler":"[{\"Start Time\":\"2026-09-14 09:20:29.888\",\"Steps\":[{\"Children\":0.19,\"Name\":\"QO [SAPHE4:MAKT[0]MANDT(201):'400'[EQ]<TA:> [1]SPRAS(203):'E'[EQ]<TA:> [2]AND \",\"Self\":0.017,\"Steps\":[{\"Children\":0.071,\"Name\":\"evaluate\",\"Self\":0.004,\"Steps\":[{\"Children\":0.061,\"Name\":\"evaluateAND [2]\",\"Self\":0.01,\"Steps\":[{\"Children\":0.038,\"Name\":\"evaluateTerm [1]\",\"Self\":0.003,\"Steps\":[{\"Children\":0.032,\"Name\":\"doSearch\",\"Self\":0.006,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":12,\"Name\":\"result size\"}],\"Total\":0.032},{\"Count\":12,\"Name\":\"result size\"}],\"Total\":0.038}],\"Total\":0.041},{\"Children\":0.017,\"Name\":\"evaluateTerm [0]\",\"Self\":0.003,\"Steps\":[{\"Children\":0.013,\"Name\":\"doSearch\",\"Self\":0.004,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":6,\"Name\":\"result size\"}],\"Total\":0.013},{\"Count\":6,\"Name\":\"result size\"}],\"Total\":0.017}],\"Total\":0.02}],\"Total\":0.071},{\"Count\":6,\"Name\":\"result size\"}],\"Total\":0.075},{\"Children\":0.051,\"Name\":\"estimate\",\"Self\":0.007,\"Steps\":[{\"Children\":0.031,\"Name\":\"estimateTree\",\"Self\":0.02,\"Steps\":[{\"Name\":\"estimateTerm [1]\",\"Total\":0.021},{\"Name\":\"estimateTerm [0]\",\"Total\":0.01},{\"Name\":\"checkLateCollectNENodes\",\"Total\":0.0}],\"Total\":0.051}],\"Total\":0.058},{\"Children\":0.017,\"Name\":\"buildTree\",\"Self\":0.017,\"Steps\":[{\"Children\":0.014,\"Name\":\"optimizeTree\",\"Self\":0.003,\"Steps\":[{\"Children\":0.004,\"Name\":\"checkOpNodes2\",\"Self\":0.008,\"Steps\":[{\"Name\":\"checkKeyAndConcats\",\"Total\":0.003},{\"Name\":\"collectNodes\",\"Total\":0.001},{\"Name\":\"checkBetween\",\"Total\":0.0}],\"Total\":0.012},{\"Name\":\"setupTermNodes\",\"Total\":0.002}],\"Total\":0.017}],\"Total\":0.034},{\"Name\":\"finalize planviz\",\"Total\":0.013},{\"Name\":\"validate [udivMgr]\",\"Steps\":[{\"Count\":6,\"Name\":\"result size\"}],\"Total\":0.007},{\"Name\":\"materializeResult\",\"Total\":0.003}],\"Total\":0.207}],\"Thread\":54509},{\"Start Time\":\"2026-09-14 09:20:29.888\",\"Steps\":[{\"Name\":\"QO [SAPHE4:MAKT$delta_1$[0]MANDT(201):'400'[EQ]<TA:> [1]SPRAS(203):'E'[EQ]<TA:> [2]AND \",\"Total\":0.007}],\"Thread\":54509}]"}]]></Details>
+				<InnerPlans>
+					<Plan ID="cs_plan4181_wdflbmt2261_30303" PlanType="Column" />
+					<Plan ID="cs_plan4182_wdflbmt2261_30303" PlanType="Column" />
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4183_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4183_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<Child ID="cs_plan4183_wdflbmt2261_30303_oltpSearchNode1">
+					<ConnectorName><![CDATA[SearchAPI::SearchResults]]></ConnectorName>
+					<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+					<Payload Unit="bytes">200</Payload>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4183_wdflbmt2261_30303_oltpSearchNode1" TypeName="FAST_SEARCH" Status="Finished">
+				<Name><![CDATA[dynamic search]]></Name>
+				<Summary><![CDATA[estimate first & optimize search accordingly]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAK]]></ObjectName>
+				<TableType><![CDATA[COLUMN TABLE]]></TableType>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.222</Exclusive>
+					<Inclusive Unit="ms">1.130</Inclusive>
+					<Timestamps>[{"Pop":[{"name":"execution","start":1789377629889039,"end":1789377629889261}]},{"PlanVizOverhead":[{"name":"planviz","start":1789377629889261,"end":1789377629890169}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"FunctionProfiler":"[{\"Start Time\":\"2026-09-14 09:20:29.889\",\"Steps\":[{\"Children\":0.079,\"Name\":\"QO [SAPHE4:VBAK[0]MANDT(201):'400'[EQ]<TA:> \",\"Self\":0.011,\"Steps\":[{\"Children\":0.03,\"Name\":\"evaluate\",\"Self\":0.002,\"Steps\":[{\"Children\":0.027,\"Name\":\"evaluateTerm [0]\",\"Self\":0.003,\"Steps\":[{\"Children\":0.021,\"Name\":\"doSearch\",\"Self\":0.006,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":90,\"Name\":\"result size\"}],\"Total\":0.018},{\"Name\":\"opAND\",\"Total\":0.003},{\"Count\":90,\"Name\":\"result size\"}],\"Total\":0.027}],\"Total\":0.03},{\"Count\":90,\"Name\":\"result size\"}],\"Total\":0.032},{\"Children\":0.017,\"Name\":\"estimate\",\"Self\":0.003,\"Steps\":[{\"Children\":0.014,\"Name\":\"estimateTree\",\"Self\":0.003,\"Steps\":[{\"Name\":\"estimateTerm [0]\",\"Total\":0.014}],\"Total\":0.017}],\"Total\":0.02},{\"Children\":0.005,\"Name\":\"buildTree\",\"Self\":0.007,\"Steps\":[{\"Children\":0.002,\"Name\":\"optimizeTree\",\"Self\":0.003,\"Steps\":[{\"Name\":\"checkExpressions\",\"Total\":0.001},{\"Name\":\"setupTermNodes\",\"Total\":0.001}],\"Total\":0.005}],\"Total\":0.012},{\"Name\":\"finalize planviz\",\"Total\":0.008},{\"Name\":\"validate [udivMgr]\",\"Steps\":[{\"Count\":90,\"Name\":\"result size\"}],\"Total\":0.006},{\"Name\":\"materializeResult\",\"Total\":0.001}],\"Total\":0.09}],\"Thread\":54509},{\"Start Time\":\"2026-09-14 09:20:29.889\",\"Steps\":[{\"Name\":\"QO [SAPHE4:VBAK$delta_1$[0]MANDT(201):'400'[EQ]<TA:> \",\"Total\":0.007}],\"Thread\":54509}]"}]]></Details>
+				<InnerPlans>
+					<Plan ID="cs_plan4184_wdflbmt2261_30303" PlanType="Column" />
+					<Plan ID="cs_plan4185_wdflbmt2261_30303" PlanType="Column" />
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4177_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4177_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<Child ID="cs_plan4177_wdflbmt2261_30303_oltpSearchNode1">
+					<ConnectorName><![CDATA[SearchAPI::SearchResults]]></ConnectorName>
+					<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+					<Payload Unit="bytes">200</Payload>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4177_wdflbmt2261_30303_oltpSearchNode1" TypeName="FAST_SEARCH" Status="Finished">
+				<Name><![CDATA[dynamic search]]></Name>
+				<Summary><![CDATA[estimate first & optimize search accordingly]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAP]]></ObjectName>
+				<TableType><![CDATA[COLUMN TABLE]]></TableType>
+				<Location><![CDATA[wdflbmt2261:30303]]></Location>
+				<ExecutionTime>
+					<Exclusive Unit="ms">1.024</Exclusive>
+					<Inclusive Unit="ms">1.499</Inclusive>
+					<Timestamps>[{"Pop":[{"name":"execution","start":1789377629886171,"end":1789377629887195}]},{"PlanVizOverhead":[{"name":"planviz","start":1789377629887195,"end":1789377629887670}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"FunctionProfiler":"[{\"Start Time\":\"2026-09-14 09:20:29.886\",\"Steps\":[{\"Children\":0.373,\"Name\":\"QO [SAPHE4:VBAP[0]MATNR(204):'TG%'[EQ]<TA:Q> [1]MANDT(201):'400'[EQ]<TA:> [2]AND \",\"Self\":0.018,\"Steps\":[{\"Children\":0.175,\"Name\":\"evaluate\",\"Self\":0.004,\"Steps\":[{\"Children\":0.157,\"Name\":\"evaluateAND [2]\",\"Self\":0.018,\"Steps\":[{\"Children\":0.072,\"Name\":\"evaluateTerm [1]\",\"Self\":0.007,\"Steps\":[{\"Children\":0.063,\"Name\":\"doSearch\",\"Self\":0.009,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":571,\"Name\":\"result size\"}],\"Total\":0.063},{\"Count\":571,\"Name\":\"result size\"}],\"Total\":0.072}],\"Total\":0.079},{\"Children\":0.073,\"Name\":\"evaluateTerm [0]\",\"Self\":0.005,\"Steps\":[{\"Children\":0.064,\"Name\":\"doSearch\",\"Self\":0.009,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":219,\"Name\":\"result size\"}],\"Total\":0.056},{\"Name\":\"opAND\",\"Total\":0.008},{\"Count\":115,\"Name\":\"result size\"}],\"Total\":0.073}],\"Total\":0.078}],\"Total\":0.175},{\"Count\":115,\"Name\":\"result size\"}],\"Total\":0.179},{\"Children\":0.071,\"Name\":\"estimate\",\"Self\":0.009,\"Steps\":[{\"Children\":0.058,\"Name\":\"estimateTree\",\"Self\":0.013,\"Steps\":[{\"Name\":\"estimateTerm [1]\",\"Total\":0.058},{\"Name\":\"checkLateCollectNENodes\",\"Total\":0.0}],\"Total\":0.071}],\"Total\":0.08},{\"Children\":0.028,\"Name\":\"buildTree\",\"Self\":0.032,\"Steps\":[{\"Children\":0.021,\"Name\":\"optimizeTree\",\"Self\":0.007,\"Steps\":[{\"Children\":0.002,\"Name\":\"checkOpNodes2\",\"Self\":0.015,\"Steps\":[{\"Name\":\"checkKeyAndConcats\",\"Total\":0.001},{\"Name\":\"collectNodes\",\"Total\":0.001},{\"Name\":\"checkBetween\",\"Total\":0.0}],\"Total\":0.017},{\"Name\":\"setupTermNodes\",\"Total\":0.004}],\"Total\":0.028}],\"Total\":0.06},{\"Name\":\"validate [udivMgr]\",\"Steps\":[{\"Count\":115,\"Name\":\"result size\"}],\"Total\":0.028},{\"Name\":\"finalize planviz\",\"Total\":0.023},{\"Name\":\"materializeResult\",\"Total\":0.003}],\"Total\":0.391}],\"Thread\":54509},{\"Start Time\":\"2026-09-14 09:20:29.886\",\"Steps\":[{\"Children\":0.175,\"Name\":\"QO [SAPHE4:VBAP$delta_1$[0]MATNR(204):'TG%'[EQ]<TA:Q> [1]MANDT(201):'400'[EQ]<TA:> [2]AND \",\"Self\":0.009,\"Steps\":[{\"Children\":0.106,\"Name\":\"evaluate\",\"Self\":0.004,\"Steps\":[{\"Children\":0.095,\"Name\":\"evaluateAND [2]\",\"Self\":0.011,\"Steps\":[{\"Children\":0.05,\"Name\":\"evaluateTerm [1]\",\"Self\":0.003,\"Steps\":[{\"Children\":0.044,\"Name\":\"doSearch\",\"Self\":0.006,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":5,\"Name\":\"result size\"}],\"Total\":0.044},{\"Count\":5,\"Name\":\"result size\"}],\"Total\":0.05}],\"Total\":0.053},{\"Children\":0.037,\"Name\":\"evaluateTerm [0]\",\"Self\":0.005,\"Steps\":[{\"Children\":0.032,\"Name\":\"doSearch\",\"Self\":0.005,\"Steps\":[{\"Name\":\"ae.searchDocs [vec]\",\"Steps\":[{\"Count\":0,\"Name\":\"result size\"}],\"Total\":0.031},{\"Name\":\"opAND\",\"Total\":0.001},{\"Count\":0,\"Name\":\"result size\"}],\"Total\":0.037}],\"Total\":0.042}],\"Total\":0.106},{\"Count\":0,\"Name\":\"result size\"}],\"Total\":0.11},{\"Children\":0.021,\"Name\":\"estimate\",\"Self\":0.006,\"Steps\":[{\"Children\":0.015,\"Name\":\"estimateTree\",\"Self\":0.006,\"Steps\":[{\"Name\":\"estimateTerm [1]\",\"Total\":0.015},{\"Name\":\"checkLateCollectNENodes\",\"Total\":0.0}],\"Total\":0.021}],\"Total\":0.027},{\"Children\":0.013,\"Name\":\"buildTree\",\"Self\":0.011,\"Steps\":[{\"Children\":0.011,\"Name\":\"optimizeTree\",\"Self\":0.002,\"Steps\":[{\"Name\":\"checkOpNodes2\",\"Steps\":[{\"Name\":\"checkKeyAndConcats\",\"Total\":0.0},{\"Name\":\"checkBetween\",\"Total\":0.0},{\"Name\":\"collectNodes\",\"Total\":0.0}],\"Total\":0.009},{\"Name\":\"setupTermNodes\",\"Total\":0.002}],\"Total\":0.013}],\"Total\":0.024},{\"Name\":\"finalize planviz\",\"Total\":0.012},{\"Name\":\"materializeResult\",\"Total\":0.002}],\"Total\":0.184}],\"Thread\":54509}]"}]]></Details>
+				<InnerPlans>
+					<Plan ID="cs_plan4178_wdflbmt2261_30303" PlanType="Column" />
+					<Plan ID="cs_plan4179_wdflbmt2261_30303" PlanType="Column" />
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4187_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4187_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4187_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>13</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4187_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on table]]></Name>
+				<Summary><![CDATA[(1 node) ]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[KNA1]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.028</Exclusive>
+					<Inclusive Unit="ms">0.028</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629890521,"end":1789377629890549}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"1","table/column processed":"KNA1","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4187_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4187_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[MANDT = '400']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[KNA1]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.028</Exclusive>
+								<Inclusive Unit="ms">0.028</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629890521,"end":1789377629890549}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Evaluation time":"0.028 ms","Inverted index":"not used (but exists)"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4188_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4188_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4188_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>0</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4188_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on Delta 1]]></Name>
+				<Summary><![CDATA[(1 node) is empty]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[KNA1]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.000</Exclusive>
+					<Inclusive Unit="ms">0.000</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629890674,"end":1789377629890674}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"1","table/column processed":"KNA1","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4188_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4188_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Search on Delta 1]]></Name>
+							<Summary><![CDATA[is empty]]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[KNA1]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.000</Exclusive>
+								<Inclusive Unit="ms">0.000</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629890674,"end":1789377629890674}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Block index":"no info available","Inverted index":"no info available"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4181_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4181_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4181_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>6</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4181_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on table]]></Name>
+				<Summary><![CDATA[(2 nodes) ]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[MAKT]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.080</Exclusive>
+					<Inclusive Unit="ms">0.099</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629888323,"end":1789377629888338}]},{"Pop":[{"start":1789377629888342,"end":1789377629888349}]},{"Pop":[{"start":1789377629888360,"end":1789377629888399}]},{"Pop":[{"start":1789377629888403,"end":1789377629888422}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"2","table/column processed":"MAKT","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4181_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4181_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[MANDT = '400']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[MAKT]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.026</Exclusive>
+								<Inclusive Unit="ms">0.099</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"estimation","start":1789377629888342,"end":1789377629888349}]},{"Pop":[{"name":"evaluation","start":1789377629888403,"end":1789377629888422}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"93303","Estimation time":"0.007 ms","Evaluation time":"0.019 ms","Inverted index":"not used (but exists)"}]]></Details>
+							<Child ID="cs_plan4181_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2">
+								<ConnectorName><![CDATA[rows]]></ConnectorName>
+								<ExecutedOutputCardinality>12</ExecutedOutputCardinality>
+							</Child>
+						</Relation>
+						<Relation ID="cs_plan4181_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[SPRAS = 'E']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[MAKT]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.054</Exclusive>
+								<Inclusive Unit="ms">0.076</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"estimation","start":1789377629888323,"end":1789377629888338}]},{"Pop":[{"name":"evaluation","start":1789377629888360,"end":1789377629888399}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"31231","Estimation time":"0.015 ms","Evaluation time":"0.039 ms","Inverted index":"not used (but exists)"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4182_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4182_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4182_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>0</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4182_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on Delta 1]]></Name>
+				<Summary><![CDATA[(1 node) is empty]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[MAKT]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.000</Exclusive>
+					<Inclusive Unit="ms">0.000</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629888598,"end":1789377629888598}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"1","table/column processed":"MAKT","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4182_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4182_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Search on Delta 1]]></Name>
+							<Summary><![CDATA[is empty]]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[MAKT]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.000</Exclusive>
+								<Inclusive Unit="ms">0.000</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629888598,"end":1789377629888598}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Block index":"no info available","Inverted index":"no info available"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4184_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4184_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4184_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>90</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4184_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on table]]></Name>
+				<Summary><![CDATA[(1 node) ]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAK]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.038</Exclusive>
+					<Inclusive Unit="ms">0.043</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629889083,"end":1789377629889093}]},{"Pop":[{"start":1789377629889098,"end":1789377629889126}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"1","table/column processed":"VBAK","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4184_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4184_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[MANDT = '400']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAK]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.038</Exclusive>
+								<Inclusive Unit="ms">0.043</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"estimation","start":1789377629889083,"end":1789377629889093}]},{"Pop":[{"name":"evaluation","start":1789377629889098,"end":1789377629889126}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"330","Estimation time":"0.010 ms","Evaluation time":"0.028 ms","Inverted index":"not used (but exists)"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4185_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4185_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4185_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>0</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4185_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on Delta 1]]></Name>
+				<Summary><![CDATA[(1 node) is empty]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAK]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.000</Exclusive>
+					<Inclusive Unit="ms">0.000</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629889243,"end":1789377629889243}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"1","table/column processed":"VBAK","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4185_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4185_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Search on Delta 1]]></Name>
+							<Summary><![CDATA[is empty]]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAK]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.000</Exclusive>
+								<Inclusive Unit="ms">0.000</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629889243,"end":1789377629889243}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Block index":"no info available","Inverted index":"no info available"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4178_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4178_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4178_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>115</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4178_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on table]]></Name>
+				<Summary><![CDATA[(2 nodes) ]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAP]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.196</Exclusive>
+					<Inclusive Unit="ms">0.223</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629886323,"end":1789377629886367}]},{"Pop":[{"start":1789377629886387,"end":1789377629886463}]},{"Pop":[{"start":1789377629886470,"end":1789377629886546}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"2","table/column processed":"VBAP","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4178_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4178_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[LIKE predicate]]></Name>
+							<Summary><![CDATA[MATNR = 'TG%']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAP]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.076</Exclusive>
+								<Inclusive Unit="ms">0.223</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629886470,"end":1789377629886546}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"572","Evaluation time":"0.076 ms","Inverted index":"not used (but exists)"}]]></Details>
+							<Child ID="cs_plan4178_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2">
+								<ConnectorName><![CDATA[rows]]></ConnectorName>
+								<ExecutedOutputCardinality>571</ExecutedOutputCardinality>
+							</Child>
+						</Relation>
+						<Relation ID="cs_plan4178_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[MANDT = '400']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAP]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.120</Exclusive>
+								<Inclusive Unit="ms">0.140</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"estimation","start":1789377629886323,"end":1789377629886367}]},{"Pop":[{"name":"evaluation","start":1789377629886387,"end":1789377629886463}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"571","Estimation time":"0.044 ms","Evaluation time":"0.076 ms","Inverted index":"not used (but exists)"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+		<Plan ID="cs_plan4179_wdflbmt2261_30303" Type="Executed" PlanType="Column">
+			<RootRelation ID="cs_plan4179_wdflbmt2261_30303_result1" Status="Finished">
+				<Name>Result</Name>
+				<Child ID="cs_plan4179_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1">
+					<ConnectorName><![CDATA[rows]]></ConnectorName>
+					<ExecutedOutputCardinality>0</ExecutedOutputCardinality>
+				</Child>
+			</RootRelation>
+			<Relation ID="cs_plan4179_wdflbmt2261_30303_qoTableSearch1" Status="Finished" Physical="False">
+				<Name><![CDATA[Search on Delta 1]]></Name>
+				<Summary><![CDATA[(2 nodes) ]]></Summary>
+				<Schema><![CDATA[SAPHE4]]></Schema>
+				<ObjectName><![CDATA[VBAP]]></ObjectName>
+				<ExecutionTime>
+					<Exclusive Unit="ms">0.102</Exclusive>
+					<Inclusive Unit="ms">0.120</Inclusive>
+					<Timestamps>[{"Pop":[{"start":1789377629886875,"end":1789377629886886}]},{"Pop":[{"start":1789377629886898,"end":1789377629886949}]},{"Pop":[{"start":1789377629886955,"end":1789377629886995}]}]</Timestamps>
+				</ExecutionTime>
+				<Details><![CDATA[{"nodes":"2","table/column processed":"VBAP","schema":"SAPHE4"}]]></Details>
+				<InnerPlans>
+					<Plan ID="subplan_cs_plan4179_wdflbmt2261_30303_qoTableSearch1" PlanType="Column">
+						<Relation ID="cs_plan4179_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode1" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[LIKE predicate]]></Name>
+							<Summary><![CDATA[MATNR = 'TG%']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAP]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.040</Exclusive>
+								<Inclusive Unit="ms">0.120</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"evaluation","start":1789377629886955,"end":1789377629886995}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"7","Evaluation time":"0.040 ms","Inverted index":"index exists but usage pattern is not possible to be determined (potential reason: search on delta)"}]]></Details>
+							<Child ID="cs_plan4179_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2">
+								<ConnectorName><![CDATA[rows]]></ConnectorName>
+								<ExecutedOutputCardinality>5</ExecutedOutputCardinality>
+							</Child>
+						</Relation>
+						<Relation ID="cs_plan4179_wdflbmt2261_30303_qoTableSearch1_qoTableSearchNode2" TypeName="QO3_SEARCH" Status="Finished">
+							<Name><![CDATA[Basic predicate]]></Name>
+							<Summary><![CDATA[MANDT = '400']]></Summary>
+							<Schema><![CDATA[SAPHE4]]></Schema>
+							<ObjectName><![CDATA[VBAP]]></ObjectName>
+							<TableType><![CDATA[COLUMN TABLE]]></TableType>
+							<Location><![CDATA[wdflbmt2261:30303]]></Location>
+							<ExecutionTime>
+								<Exclusive Unit="ms">0.062</Exclusive>
+								<Inclusive Unit="ms">0.074</Inclusive>
+								<Timestamps>[{"Pop":[{"name":"estimation","start":1789377629886875,"end":1789377629886886}]},{"Pop":[{"name":"evaluation","start":1789377629886898,"end":1789377629886949}]}]</Timestamps>
+							</ExecutionTime>
+							<Details><![CDATA[{"Estimated result size":"6","Estimation time":"0.011 ms","Evaluation time":"0.051 ms","Inverted index":"index exists but usage pattern is not possible to be determined (potential reason: search on delta)"}]]></Details>
+						</Relation>
+					</Plan>
+				</InnerPlans>
+			</Relation>
+		</Plan>
+
+	</ReferencedPlans>
+</Plan>
+
