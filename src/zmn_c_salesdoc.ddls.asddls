@@ -13,7 +13,8 @@ define root view entity zmn_c_salesdoc
       _SalesDocument.SalesOffice,
   
       _SalesDocument.SalesDistrict,
-      @UI.lineItem: [{ position: 27 }]
+      @UI.lineItem: [{ position: 21 }]
+      @EndUserText.label: 'Order type'
       _SalesDocument._SalesDocumentType._Text[1: Language = $session.system_language].SalesDocumentTypeName,
       @UI.lineItem: [{position: 22}]
       _SalesDocument.CreationDate,
