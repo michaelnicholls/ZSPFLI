@@ -36,10 +36,14 @@ define root view entity zmn_c_salesdoc
 
 
       _SalesDocument._SoldToParty.CustomerName,
-      @UI.lineItem: [{ position: 80 }]
+   //   @UI.lineItem: [{ position: 80 }]
       @EndUserText.label: 'Item status'
       _SDProcessStatus._Text[ 1:  Language = $session.system_language].SDProcessStatusDesc,
       @EndUserText.label: 'Order status'
-      @UI.lineItem: [{ position: 90 }]
-      _SalesDocument._OverallSDProcessStatus._Text[1: Language = $session.system_language].OverallSDProcessStatusDesc
+ //     @UI.lineItem: [{ position: 90 }]
+      _SalesDocument._OverallSDProcessStatus._Text[1: Language = $session.system_language].OverallSDProcessStatusDesc,
+       @UI.lineItem: [{ position: 100 }]
+       @Semantics.amount.currencyCode: 'TransactionCurrency'
+      NetAmount,
+      TransactionCurrency
 }
