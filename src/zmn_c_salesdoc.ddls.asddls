@@ -9,12 +9,12 @@ define root view entity zmn_c_salesdoc
   key SalesDocument,
       @UI.lineItem: [{ position: 20 }]
   key SalesDocumentItem,
-      @UI.lineItem: [{ position: 25 }]
-
+  
       _SalesDocument.SalesOffice,
-      @UI.lineItem: [{ position: 26 }]
-
+  
       _SalesDocument.SalesDistrict,
+      @UI.lineItem: [{ position: 27 }]
+      _SalesDocument._SalesDocumentType._Text[1: Language = $session.system_language].SalesDocumentTypeName,
       @UI.lineItem: [{position: 22}]
       _SalesDocument.CreationDate,
       @UI.lineItem: [{ position: 30 }]
@@ -22,7 +22,7 @@ define root view entity zmn_c_salesdoc
       Product,
       @UI.lineItem: [{ position: 40 }]
 
-      _ProductText[ 1:  Language = 'E'].ProductName,
+      _ProductText[ 1:  Language = $session.system_language].ProductName,
       @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
       @UI.lineItem: [{ position: 50 }]
 
@@ -34,5 +34,11 @@ define root view entity zmn_c_salesdoc
       @UI.lineItem: [{ position: 70 }]
 
 
-      _SoldToParty.CustomerName
+      _SoldToParty.CustomerName,
+      @UI.lineItem: [{ position: 80 }]
+      @EndUserText.label: 'Item status'
+      _SDProcessStatus._Text[ 1:  Language = $session.system_language].SDProcessStatusDesc,
+      @EndUserText.label: 'Order status'
+      @UI.lineItem: [{ position: 90 }]
+      _SalesDocument._OverallSDProcessStatus._Text[1: Language = $session.system_language].OverallSDProcessStatusDesc
 }
