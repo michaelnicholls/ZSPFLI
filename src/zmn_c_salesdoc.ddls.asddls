@@ -2,7 +2,7 @@
 @EndUserText.label: 'sales doc'
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity zmn_c_salesdoc
-  as projection on ZMN_I_SALESDOC
+  as projection on ZMN_I_SALESDOC 
 {
       @UI.lineItem: [{ position: 10 }]
       @UI.selectionField: [{position: 10}]
