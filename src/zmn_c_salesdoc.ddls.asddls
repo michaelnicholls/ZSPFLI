@@ -44,6 +44,11 @@ define root view entity zmn_c_salesdoc
       _SalesDocument._OverallSDProcessStatus._Text[1: Language = $session.system_language].OverallSDProcessStatusDesc,
        @UI.lineItem: [{ position: 100 }]
        @Semantics.amount.currencyCode: 'TransactionCurrency'
+        @EndUserText.label: 'Item net value'
       NetAmount,
+      @UI.lineItem: [{ position: 110 }]
+       @Semantics.amount.currencyCode: 'TransactionCurrency'
+        @EndUserText.label: 'Order net value'
+      _SalesDocument.TotalNetAmount,
       TransactionCurrency
 }
