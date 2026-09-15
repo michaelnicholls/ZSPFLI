@@ -8,6 +8,8 @@ define root view entity zmn_c_salesbyprod as projection on zmn_i_salesbyprod
     key Product,
     @UI.lineItem: [{ position: 20 }]
     key SalesDocument,
+    @UI.lineItem: [{ position: 15 }]
+    ProductName,
     @UI.lineItem: [{ position: 30 }]
     SoldToParty,
       @UI.lineItem: [{ position: 40 }]
