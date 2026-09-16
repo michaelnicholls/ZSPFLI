@@ -1,7 +1,7 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'sales by product'
-@Metadata.ignorePropagatedAnnotations: true
+@Metadata.ignorePropagatedAnnotations: false
 define root view entity zmn_i_salesbyprod as select from zmn_so_for_mat as mat 
 join I_SalesDocumentBasic as doc on mat.SalesDocument = doc.SalesDocument
 join I_ProductText as text on text.Product = mat.Product
@@ -13,6 +13,8 @@ join I_ProductText as text on text.Product = mat.Product
     doc._SoldToParty.CustomerName,
     @Semantics.amount.currencyCode: 'TransactionCurrency'
     doc.TotalNetAmount,
-    doc.TransactionCurrency
+    doc.TransactionCurrency,
+    mat.ordered,
+    mat.OrderQuantityUnit
 }
 where text.Language = $session.system_language

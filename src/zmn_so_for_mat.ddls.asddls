@@ -2,8 +2,12 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'sales order for a material'
 @Metadata.ignorePropagatedAnnotations: true
-define view entity zmn_so_for_mat as select distinct from ZMN_I_SALESDOC
+define view entity zmn_so_for_mat as select from ZMN_I_SALESDOC
 {
     key Product,
-    key SalesDocument
-    } 
+    key SalesDocument,
+    OrderQuantityUnit,
+    @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'
+    sum( OrderQuantity) as ordered
+    
+    }  group by Product,SalesDocument,OrderQuantityUnit
