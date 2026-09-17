@@ -16,6 +16,7 @@ join I_ProductText as text on text.Product = mat.Product
     doc.TransactionCurrency,
     mat.ordered,
     mat.OrderQuantityUnit,
-    doc.CreationDate
+    doc.CreationDate,
+    'Details' as details
 }
 where text.Language = $session.system_language
