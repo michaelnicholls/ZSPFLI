@@ -9,9 +9,12 @@ define root view entity zmn_c_salesbyprod
   key Product,
       @UI.lineItem: [{ position: 20 }]
   key SalesDocument,
-      @UI.lineItem: [{ position: 15 }]
+      @UI.lineItem: [{ position: 25 }]
+      CreationDate,
+      @UI.lineItem: [{position: 15}]
+      
       ProductName,
-      @UI.lineItem: [{ position: 30 }]
+      @UI.lineItem: [{ position: 39 }]
       @EndUserText.label: 'Qty ordered'
 
       ordered,
