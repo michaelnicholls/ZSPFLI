@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>ZMN_SO_FOR_MAT</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>sales order for a material</DDTEXT>
+    <DDTEXT>sales order for a product</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

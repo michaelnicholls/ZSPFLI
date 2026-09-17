@@ -3,7 +3,7 @@
 {
 "FROM":
 [
-"ZMN_I_SALESDOC"
+"I_SALESDOCUMENTITEM"
 ],
 "ASSOCIATED":
 [],
