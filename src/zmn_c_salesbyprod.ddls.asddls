@@ -29,7 +29,7 @@ define root view entity zmn_c_salesbyprod
       TotalNetAmount,
       TransactionCurrency,
       @Consumption.semanticObject: 'SalesOrder'
-           @UI.lineItem: [{ position: 70, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'manageV2'}]
+           @UI.lineItem: [{ position: 70, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'displayFactSheet'}]
   
       details
 }
