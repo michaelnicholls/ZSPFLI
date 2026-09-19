@@ -7,8 +7,10 @@ define root view entity zmn_c_salesbyprod
       @UI.selectionField: [{position: 10}]
       @UI.lineItem: [{ position: 10 }]
   key Product,
-      @UI.lineItem: [{ position: 20}]
-  key SalesDocument,
+     // @UI.lineItem: [{ position: 20}]
+    @Consumption.semanticObject: 'SalesOrder'
+    @UI.lineItem: [{ position: 20, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'displayFactSheet'}]
+    key SalesDocument,
       @UI.lineItem: [{ position: 25 }]
       CreationDate,
       @UI.lineItem: [{position: 15}]
@@ -27,9 +29,4 @@ define root view entity zmn_c_salesbyprod
       @UI.lineItem: [{ position: 60 }]
 
       TotalNetAmount,
-      TransactionCurrency,
-      @Consumption.semanticObject: 'SalesOrder'
-           @UI.lineItem: [{ position: 70, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'displayFactSheet'}]
-  
-      details
-}
+      TransactionCurrency}
