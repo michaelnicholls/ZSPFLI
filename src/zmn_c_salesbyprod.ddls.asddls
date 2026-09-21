@@ -29,4 +29,11 @@ define root view entity zmn_c_salesbyprod
       @UI.lineItem: [{ position: 60 }]
 
       TotalNetAmount,
-      TransactionCurrency}
+      TransactionCurrency,
+      SalesOrganization,
+      DistributionChannel,
+      SalesDocumentType,
+      OrganizationDivision
+      
+      }
+      
