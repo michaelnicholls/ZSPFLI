@@ -1,6 +1,7 @@
 # ZSPFLI
-ZSPFLI plus some CDS views based on i_documentsalesitem
+ZSPFLI
 
+Anything related to sales orders is now in https://github.com/michaelnicholls/ZORDERS.git
 
 ## If problems during abapGit import
 remove existing VANs using /o/IWBEP/REG_VOCAN
